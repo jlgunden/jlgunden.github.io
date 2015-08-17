@@ -1,0 +1,36 @@
+/* line 17, ../sass/menu.scss */
+.mobile_menu { display: none; }
+@media screen and (max-width: 900px) { /* line 17, ../sass/menu.scss */
+  .mobile_menu { display: inline-block; } }
+
+/* line 24, ../sass/menu.scss */
+.lines_button { position: relative; display: inline-block; vertical-align: middle; transition: .3s; -webkit-transition: .3s; cursor: pointer; border-radius: 5px; margin-bottom: 19px; }
+/* line 33, ../sass/menu.scss */
+.lines_button:hover { opacity: 1; }
+/* line 37, ../sass/menu.scss */
+.lines_button:active { transition: 0; -webkit-transition: 0; background: rgba(0, 0, 0, 0.1); }
+
+/* line 44, ../sass/menu.scss */
+.lines { display: inline-block; width: 35px; height: 5px; background: #fff; border-radius: 2.5px; transition: 0.3s; -webkit-transition: 0.3s; position: relative; }
+/* line 51, ../sass/menu.scss */
+.lines:before, .lines:after { display: inline-block; width: 35px; height: 5px; background: #fff; border-radius: 2.5px; transition: 0.3s; -webkit-transition: 0.3s; position: absolute; left: 0; content: ''; transform-origin: 2.5px center; -webkit-transform-origin: 2.5px center; }
+/* line 59, ../sass/menu.scss */
+.lines:before { top: 8.75px; }
+/* line 60, ../sass/menu.scss */
+.lines:after { top: -8.75px; }
+
+/* line 63, ../sass/menu.scss */
+.lines_button:hover { opacity: 1; }
+/* line 67, ../sass/menu.scss */
+.lines_button:hover .lines:before { top: 10px; }
+/* line 68, ../sass/menu.scss */
+.lines_button:hover .lines:after { top: -10px; }
+
+/* line 72, ../sass/menu.scss */
+.lines_button.x.close .lines { background: transparent; }
+/* line 78, ../sass/menu.scss */
+.lines_button.x.close .lines:before, .lines_button.x.close .lines:after { transform-origin: 50% 50%; -webkit-transform-origin: 50% 50%; top: 0; width: 35px; }
+/* line 86, ../sass/menu.scss */
+.lines_button.x.close .lines:before { transform: rotate3d(0, 0, 1, 45deg); -webkit-transform: rotate3d(0, 0, 1, 45deg); }
+/* line 90, ../sass/menu.scss */
+.lines_button.x.close .lines:after { transform: rotate3d(0, 0, 1, -45deg); -webkit-transform: rotate3d(0, 0, 1, -45deg); }

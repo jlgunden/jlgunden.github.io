@@ -1,0 +1,152 @@
+$header_color: #3498db;
+$white: #fff;
+
+@media screen and (max-width: 900px) {
+  .navigation_title {
+    display: none;
+  }
+}
+
+body {
+  background-color: #ecf0f1;
+  display: none;
+  font-size: 16px;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  width: 100%;
+  height: 70px;
+  line-height: 2;
+  background-color: $header_color;
+  color: $white;
+  /* box shadow mixin */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.title {
+  margin-left: 20px;
+  line-height: 70px;
+  font-size: 32px;
+  margin-right: 20px;
+  cursor: default;
+}
+.navigation_title {
+  font-size: 16px;
+  margin-right: 20px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+
+  &:hover {
+    color: #2c3e50;
+    font-size: 20px;
+  }
+}
+
+.navigation_title a {
+  text-decoration: none;
+  color: inherit;
+}
+.active {
+  color: #2c3e50;
+}
+
+.main {
+  max-width: 900px;
+  margin: 20px auto;
+}
+.sliding_menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  background-color: #fff;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  transition: width 0.3s;
+  -webkit-transition: width 0.3s;
+}
+
+.sliding_menu.active_menu {
+  z-index: 2;
+  margin-top: 70px;
+  width: 280px;
+  height: 100%;
+ -webkit-box-shadow: 5px 0 5px -2px rgba(0,0,0,0.16);
+}
+.content {
+  max-width: 700px;
+  height: 1000px;
+  padding: 35px;
+  margin: 100px auto;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.portrait_container {
+  width: 300px;
+  margin: 0 auto 30px auto;
+}
+.portrait_container img {
+  height: 300px;
+  width: 300px;
+  border: 0px solid black;
+  border-radius: 150px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.mask {
+  background-color: #000;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  background-color: black;
+  overflow: hidden;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+}
+
+.mask.active_mask {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.slide_up{
+  animation-name: slideUp;
+  -webkit-animation-name: slideUp;  
+
+  animation-duration: 1s; 
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease;  
+  -webkit-animation-timing-function: ease;
+
+  visibility: visible !important;     
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(10%);
+  }
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(10%);
+  }
+}
+
+
