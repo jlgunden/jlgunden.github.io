@@ -40,15 +40,4 @@ slide_out.prototype.trigger_show = function() {
   this.menu.toggleClass('active_menu');
   this.mask.toggleClass('active_mask');
   $('#menu').toggleClass('close');
-
-  // this.show_menu = this.show_menu ? false : true;
-
-  // if (this.show_menu) {
-  //   this.menu.addClass('active_menu');
-  //   this.mask.addClass('active_mask');
-  // }
-  // else {
-  //   this.menu.removeClass('active_menu');
-  //   this.mask.removeClass('active_mask');
-  // }
 };
