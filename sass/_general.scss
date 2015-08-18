@@ -90,20 +90,20 @@ html {
 }
 
 .portrait_container {
-  width: 290px;
+  width: 250px;
   margin: 0 auto 30px auto;
 }
 
 .portrait_container img {
-  height: 290px;
-  width: 290px;
+  height: 250px;
+  width: 250px;
   border: 0px solid black;
   border-radius: 150px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
   // @media screen and (max-width: 400px) {
-  //   height: 200px;
-  //   width: 200px;
+  //   height: 80%;
+  //   width: 80%;
   // }
 }
 
