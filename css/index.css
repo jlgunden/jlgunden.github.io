@@ -1,54 +1,59 @@
-@media screen and (max-width: 900px) { /* line 5, ../sass/index.scss */
-  .navigation_title { display: none; } }
-/* line 10, ../sass/index.scss */
 body { background-color: #ecf0f1; display: none; font-size: 16px; margin: 0; font-family: 'Roboto', sans-serif; }
 
-/* line 18, ../sass/index.scss */
 html { height: 100%; }
 
-/* line 22, ../sass/index.scss */
-.header { position: fixed; top: 0; left: 0; padding: 0 20px; width: 100%; height: 70px; line-height: 2; background-color: #3498db; color: #fff; /* box shadow mixin */ box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+.header { position: fixed; z-index: 2; top: 0; left: 0; padding: 0 20px; width: 100%; height: 70px; line-height: 2; background-color: #3498db; color: #fff; /* box shadow mixin */ box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
-/* line 35, ../sass/index.scss */
 .title { margin-left: 20px; line-height: 70px; font-size: 32px; margin-right: 20px; cursor: default; }
 
-/* line 42, ../sass/index.scss */
 .navigation_title { font-size: 16px; margin-right: 20px; transition: all 0.5s; -webkit-transition: all 0.5s; }
-/* line 48, ../sass/index.scss */
 .navigation_title:hover { color: #2c3e50; font-size: 20px; }
+@media screen and (max-width: 900px) { .navigation_title { display: none; } }
 
-/* line 54, ../sass/index.scss */
 .navigation_title a { text-decoration: none; color: inherit; }
 
-/* line 58, ../sass/index.scss */
 .active { color: #2c3e50; }
 
-/* line 62, ../sass/index.scss */
 .main { max-width: 900px; margin: 20px auto; }
 
-/* line 66, ../sass/index.scss */
-.sliding_menu { position: fixed; top: 0; left: 0; width: 0; background-color: #fff; overflow: hidden; width: 0; height: 0; transition: width 0.3s; -webkit-transition: width 0.3s; }
+.content { max-width: 100%; height: 1000px; padding: 35px; margin: 100px auto; background-color: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+@media screen and (max-width: 900px) { .content { width: 80%; } }
+@media screen and (max-width: 590px) { .content { margin-top: 90px; width: 75%; } }
+@media screen and (max-width: 500px) { .content { width: 70%; } }
 
-/* line 79, ../sass/index.scss */
-.sliding_menu.active_menu { z-index: 2; margin-top: 70px; width: 280px; height: 100%; -webkit-box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.16); }
+.portrait_container { width: 290px; margin: 0 auto 30px auto; }
 
-/* line 86, ../sass/index.scss */
-.content { max-width: 700px; height: 1000px; padding: 35px; margin: 100px auto; background-color: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+.portrait_container img { height: 290px; width: 290px; border: 0px solid black; border-radius: 150px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
 
-/* line 95, ../sass/index.scss */
-.portrait_container { width: 300px; margin: 0 auto 30px auto; }
-
-/* line 99, ../sass/index.scss */
-.portrait_container img { height: 300px; width: 300px; border: 0px solid black; border-radius: 150px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
-
-/* line 107, ../sass/index.scss */
 .mask { background-color: #000; position: fixed; top: 70px; left: 0; background-color: black; overflow: hidden; opacity: 0; width: 0; height: 0; transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s; }
 
-/* line 120, ../sass/index.scss */
 .mask.active_mask { width: 100%; height: 100%; opacity: 0.5; transition: opacity 0.3s; }
 
-/* line 127, ../sass/index.scss */
 .slide_up { animation-name: slideUp; -webkit-animation-name: slideUp; animation-duration: 1s; -webkit-animation-duration: 1s; animation-timing-function: ease; -webkit-animation-timing-function: ease; visibility: visible !important; }
 
 @keyframes slideUp { 0% { transform: translateY(10%); } }
 @-webkit-keyframes slideUp { 0% { -webkit-transform: translateY(10%); } }
+.mobile_menu { display: none; }
+@media screen and (max-width: 900px) { .mobile_menu { display: inline-block; } }
+
+.lines_button { position: relative; display: inline-block; vertical-align: middle; transition: .3s; -webkit-transition: .3s; cursor: pointer; border-radius: 5px; margin-bottom: 19px; }
+.lines_button:hover { opacity: 1; }
+.lines_button:active { transition: 0; -webkit-transition: 0; background: rgba(0, 0, 0, 0.1); }
+
+.lines { display: inline-block; width: 35px; height: 5px; background: #fff; border-radius: 2.5px; transition: 0.3s; -webkit-transition: 0.3s; position: relative; }
+.lines:before, .lines:after { display: inline-block; width: 35px; height: 5px; background: #fff; border-radius: 2.5px; transition: 0.3s; -webkit-transition: 0.3s; position: absolute; left: 0; content: ''; transform-origin: 2.5px center; -webkit-transform-origin: 2.5px center; }
+.lines:before { top: 8.75px; }
+.lines:after { top: -8.75px; }
+
+.lines_button:hover { opacity: 1; }
+.lines_button:hover .lines:before { top: 10px; }
+.lines_button:hover .lines:after { top: -10px; }
+
+.lines_button.x.close .lines { background: transparent; }
+.lines_button.x.close .lines:before, .lines_button.x.close .lines:after { transform-origin: 50% 50%; -webkit-transform-origin: 50% 50%; top: 0; width: 35px; }
+.lines_button.x.close .lines:before { transform: rotate3d(0, 0, 1, 45deg); -webkit-transform: rotate3d(0, 0, 1, 45deg); }
+.lines_button.x.close .lines:after { transform: rotate3d(0, 0, 1, -45deg); -webkit-transform: rotate3d(0, 0, 1, -45deg); }
+
+.nav_drawer { position: fixed; top: 0; left: 0; width: 0; background-color: #fff; overflow: hidden; width: 0; height: 0; transition: width 0.3s; -webkit-transition: width 0.3s; }
+
+.nav_drawer.active_menu { z-index: 3; margin-top: 70px; width: 280px; height: 100%; -webkit-box-shadow: 5px 0 5px -2px rgba(0, 0, 0, 0.16); }
