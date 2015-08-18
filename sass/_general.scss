@@ -11,8 +11,10 @@ html {
 }
 
 .disable_scroll {
+  height: 100%;
   overflow: hidden;
-  position: relative;
+  width: 100%;
+  position: fixed;
 }
 
 .header {
