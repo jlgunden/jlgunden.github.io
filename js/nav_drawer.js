@@ -40,4 +40,5 @@ nav_drawer.prototype.trigger_show = function() {
   this.menu.toggleClass('active_menu');
   this.mask.toggleClass('active_mask');
   $('#menu').toggleClass('close');
+  $(document.body).toggleClass('disable_scroll');
 };
