@@ -5,11 +5,11 @@
  * @param  {string} module
  * @param  {string} method
  * @param  {object} arguments
- * @param  {Function} callback
- * @param  {Function} error_callback
+ * @param  {Function} handler
+ * @param  {Function} error_handler
  * @return {void}
  */
-var api = function(module, method, arguments, callback, error_callback) {
+var api = function(module, method, arguments, handler, error_handler) {
   
   var data = {
     'module': module,
@@ -20,12 +20,12 @@ var api = function(module, method, arguments, callback, error_callback) {
   $.ajax({
     'type': 'POST',
     'url': 'http://jacobgunden.site40.net/',
-    'data': JSON.stringify(data),
+    'data': data,
     'success': function(response) {
-      callback && callback(response);
+      handler && handler(response);
     },
     'error': function(response) {
-      error_callback && error_callback(response);
+      error_handler && error_handler(response);
     }
   });
 

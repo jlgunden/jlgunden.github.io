@@ -7,4 +7,8 @@ $(document).ready(function() {
   $('#menu').click(function() {
     navigation_drawer.trigger_show();
   })
+
+  // api('email', 'send_email', {'email_address': 'foobar@someone.com'}, function(response) {
+  //   console.log(response);
+  // });
 });

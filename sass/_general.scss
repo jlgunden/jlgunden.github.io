@@ -10,6 +10,32 @@ html {
   height: 100%;
 }
 
+h1 {
+  color: $header_color;
+  margin: 0 0 0 5px;
+}
+
+button {
+  height: 45px;
+  width: 150px;
+  background-color: $header_color;
+  cursor: pointer;
+  border: none;
+  // outline: none;
+  border-radius: 2px;
+  text-align: middle;
+  font-size: 18px;
+  color: $white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    background-color: darken($header_color, 5%);
+  }
+}
+
 .disable_scroll {
   overflow: hidden;
 }
@@ -25,7 +51,6 @@ html {
   line-height: 2;
   background-color: $header_color;
   color: $white;
-  /* box shadow mixin */
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -67,9 +92,8 @@ html {
   margin: 20px auto;
 }
 
-.content {
-  max-width: 100%;
-  height: 1000px;
+.card {
+  width: 100%;
   padding: 35px;
   margin: 100px auto;
   background-color: #fff;

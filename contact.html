@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
   <title>JacobGunden</title>
@@ -9,6 +9,23 @@
   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/nav_drawer.js"></script>
+  <script type="text/javascript" src="js/api.js"></script>
+  <script>
+    var send_email = function() {
+      var attributes = ['email_address', 'name_first', 'name_last', 'message'];
+
+      email_address_input = $('#email_address');
+      name_first_input = $('#name_first');
+      name_last_input = $('#name_last');
+      message_input = $('#message');
+
+      for (var i = 0; i < attributes.length; i++) {
+        //
+      }
+      
+
+    }
+  </script>
 </head>
 <body>
 <header id="header" class="header">
@@ -18,11 +35,32 @@
     </section>
   </div>
   <span class="title">Jacob Gunden</span>
-  <span class="navigation_title active"><a href="index.html">Home</a></span>
+  <span class="navigation_title"><a href="index.html">Home</a></span>
   <span class="navigation_title">About</span>
   <span class="navigation_title">Resume</span>
-  <span class="navigation_title"><a href="contact.html">Contact</span>
+  <span class="navigation_title active"><a href="contact.html">Contact</a></span>
 </header>
-
+<main class="main">
+  <div id="content" class="slide_up card">
+    <h1>Reach out to me</h1>
+    <div class="input_group">
+      <input id="email_address" type="text" required>
+      <label>Email Address</label>
+    </div>
+    <div class="input_group">
+      <input id="name_first" type="text" required>
+      <label>First Name</label>
+    </div>
+    <div class="input_group">
+      <input id="name_last" type="text" required>
+      <label>Last Name</label>
+    </div>
+    <div class="input_group">
+      <input id="message" type="text" required>
+      <label>Message</label>
+    </div>
+    <button id="email_submit" type="button" onclick="email_submit()">Submit</button>
+  </div>
+</main>
 </body>
 </html>
