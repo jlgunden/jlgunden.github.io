@@ -4,7 +4,9 @@
  * @constructor
  * @return {void}
  */
-var nav_drawer = function() {};
+var nav_drawer = function() {
+  this.items = ['Home', 'About', 'Resume', 'Contact'];
+};
 
 /**
  * [decorate description]
@@ -17,10 +19,13 @@ nav_drawer.prototype.decorate = function(parent)  {
   this.menu = $(document.createElement('div'))
     .addClass('nav_drawer');
 
-  var menu_top = $(document.createElement('div'))
-    .css({'height': '70px', 'background-color': '#fff', 'width': '100%', 'text-align': 'center', 'line-height': '4'})
-    .html('MENU');
-  this.menu.append(menu_top);
+  for (var i = 0; i < this.items.length; i++) {
+    this.menu.append(
+      $(document.createElement('div'))
+        .addClass('nav_drawer_item')
+        .html('<a href="'+this.items[i]+'.html">'+this.items[i]+'</a>')
+      );
+  }
 
   this.mask = $(document.createElement('div'))
     .addClass('mask')

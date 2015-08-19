@@ -1,9 +1,9 @@
 $header_color: #3498db;
 $white: #fff;
 $menu_icon_color: #fff;
-$button-size : 35px; 
-$transition: .3s;
+$error_color: #c0392b;
 
 @import "_general.scss";
 @import "_menu.scss";
 @import "_input.scss";
+@import "_borderbox.scss";

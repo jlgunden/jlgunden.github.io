@@ -11,20 +11,37 @@
   <script type="text/javascript" src="js/nav_drawer.js"></script>
   <script type="text/javascript" src="js/api.js"></script>
   <script>
-    var send_email = function() {
+
+  $(document).ready(function() {
       var attributes = ['email_address', 'name_first', 'name_last', 'message'];
-
-      email_address_input = $('#email_address');
-      name_first_input = $('#name_first');
-      name_last_input = $('#name_last');
-      message_input = $('#message');
-
-      for (var i = 0; i < attributes.length; i++) {
-        //
+      var inputs = {
+        'email_address': $('#email_address')
       }
-      
+      // email_address_input = $('#email_address');
+      // name_first_input = $('#name_first');
+      // name_last_input = $('#name_last');
+      // message_input = $('#message');
 
-    }
+      for (var input in inputs) {
+        console.log(inputs[input].val());
+        inputs[input].blur(function() {
+          console.log('feakj');
+          if (inputs[input].val() === '') {
+            inputs[input].addClass('input_error');
+            $('#' + input + '_error').html('Email Address is required');
+          }
+          else {
+            // remove errors
+          }
+
+        });
+
+        // if (inputs[input].val() === '') {
+        //   inputs[input].addClass('input_error');
+        // }
+      }
+  });
+      
   </script>
 </head>
 <body>
@@ -44,20 +61,24 @@
   <div id="content" class="slide_up card">
     <h1>Reach out to me</h1>
     <div class="input_group">
-      <input id="email_address" type="text" required>
+      <input id="email_address" name="Email Address" type="text" required>
       <label>Email Address</label>
+      <div id="email_address_error" class="error_message"></div>
     </div>
     <div class="input_group">
       <input id="name_first" type="text" required>
       <label>First Name</label>
+      <div class="error_message"></div>
     </div>
     <div class="input_group">
       <input id="name_last" type="text" required>
       <label>Last Name</label>
+      <div class="error_message"></div>
     </div>
     <div class="input_group">
       <input id="message" type="text" required>
       <label>Message</label>
+      <div class="error_message"></div>
     </div>
     <button id="email_submit" type="button" onclick="email_submit()">Submit</button>
   </div>
