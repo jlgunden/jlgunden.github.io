@@ -111,11 +111,18 @@ $button-size: 35px;
   width: 100%;
   text-align: center;
   line-height: 4;
+  transition: 0.3s;
+  list-style: none;
+
+  &:hover {
+    background-color: darken($white, 5%);
+  }
 }
 
 .nav_drawer_item a {
   color: inherit;
   text-decoration: none;
+  display: block;
 }
 
 .nav_drawer.active_menu {
