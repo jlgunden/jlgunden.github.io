@@ -2,11 +2,13 @@
 /**
  * [nav_drawer description]
  * @constructor
+ * @param {JQuery} menu The menu icon element
  * @return {void}
  */
-var nav_drawer = function() {
-  this.items_order = ['Home', 'About', 'Resume', 'Contact'];
-  this.items = {
+var nav_drawer = function(menu) {
+  this.menu_ = menu;
+  this.items_order_ = ['Home', 'About', 'Resume', 'Contact'];
+  this.items_ = {
     'Home': {
       'name': 'Home',
       'link': 'index.html'
@@ -34,40 +36,44 @@ var nav_drawer = function() {
 nav_drawer.prototype.decorate = function(parent)  {
   var self = this;
 
-  this.menu = $(document.createElement('div'))
+  this.drawer_ = $(document.createElement('div'))
     .addClass('nav_drawer');
 
   var ul = $(document.createElement('ul'));
 
-  for (var i = 0; i < this.items_order.length; i++) {
-    this.menu.append(
+  for (var i = 0; i < this.items_order_.length; i++) {
+    this.drawer_.append(
       $(document.createElement('li'))
         .addClass('nav_drawer_item')
         // ehh, there is probably a better way to do this
         .html(
-          '<a href="' + this.items[this.items_order[i]].link + '">' +
-          this.items[this.items_order[i]].name + '</a>'
+          '<a href="' + this.items_[this.items_order_[i]].link + '">' +
+          this.items_[this.items_order_[i]].name + '</a>'
         )
     );
   }
 
-  this.mask = $(document.createElement('div'))
+  this.mask_ = $(document.createElement('div'))
     .addClass('mask')
     .click(function() {
-      self.trigger_show();
+      self.toggle_open();
     });
-  $(document.body).append(this.menu);
-  $(document.body).append(this.mask);
+
+  this.menu_.click(function() {
+    self.toggle_open();
+  });
+
+  $(document.body).append(this.drawer_);
+  $(document.body).append(this.mask_);
 };
 
 /**
- * [trigger_show description]
+ * [toggle_open description]
  * @return {void} [description]
  */
-nav_drawer.prototype.trigger_show = function() {
-  var self = this;
-  this.menu.toggleClass('active_menu');
-  this.mask.toggleClass('active_mask');
-  $('#menu').toggleClass('close');
+nav_drawer.prototype.toggle_open = function() {
+  this.drawer_.toggleClass('open');
+  this.mask_.toggleClass('open');
+  this.menu_.toggleClass('close');
   $(document.body).toggleClass('disable_scroll');
 };

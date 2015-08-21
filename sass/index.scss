@@ -3,7 +3,7 @@ $white: #fff;
 $menu_icon_color: #fff;
 $error_color: #c0392b;
 
-@import "_general.scss";
-@import "_nav_drawer.scss";
-@import "_input.scss";
-@import "_borderbox.scss";
+@import "general";
+@import "nav_drawer";
+@import "input";
+@import "borderbox";

@@ -1,48 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>JacobGunden</title>
+  <title>Jacob Gunden</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta charset="UTF-8" author="Jacob Gunden">
   <link rel="stylesheet" href="css/index.css">
   <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/nav_drawer.js"></script>
   <script type="text/javascript" src="js/api.js"></script>
+  <script type="text/javascript" src="js/form_controller.js"></script>
   <script>
 
-  $(document).ready(function() {
-      var attributes = ['email_address', 'name_first', 'name_last', 'message'];
+    $(function() {
+      $(document.body).fadeIn(1500);
+      var navigation_drawer = new nav_drawer($('#menu'));
+      navigation_drawer.decorate($('#sliding_menu'));
+
       var inputs = {
-        'email_address': $('#email_address')
-      }
-      // email_address_input = $('#email_address');
-      // name_first_input = $('#name_first');
-      // name_last_input = $('#name_last');
-      // message_input = $('#message');
+        'email_address': {
+          'input_element': $('#email_address'),
+          'error_message_element': $('#email_address_error'),
+          'name': 'Email address',
+          'type': 'email',
+          'required': true
+        },
+        'name_first': {
+          'input_element': $('#name_first'),
+          'error_message_element': $('#email_address_error'),
+          'name': 'First name',
+          'type': 'string',
+          'required': false
+        },
+        'name_last': {
+          'input_element': $('#name_last'),
+          'error_message_element': $('#name_last_error'),
+          'name': 'Last name',
+          'type': 'string',
+          'required': false
+        },
+        'message': {
+          'input_element': $('#message'),
+          'error_message_element': $('#message_error'),
+          'name': 'Message',
+          'type': 'string',
+          'required': false
+        }
+      };
+      var form = new form_controller(inputs, $('#email_submit'), $('#form_inputs'));
 
-      // todo: basic validator class
-
-      for (var input in inputs) {
-        console.log(inputs[input].val());
-        inputs[input].blur(function() {
-          console.log('feakj');
-          if (inputs[input].val() === '') {
-            inputs[input].addClass('input_error');
-            $('#' + input + '_error').html('Email Address is required');
-          }
-          else {
-            // remove errors
-          }
-
-        });
-
-        // if (inputs[input].val() === '') {
-        //   inputs[input].addClass('input_error');
-        // }
-      }
-  });
+    });
 
   </script>
 </head>
@@ -62,27 +69,29 @@
 <main class="main">
   <div id="content" class="slide_up card">
     <h1>Reach out to me</h1>
-    <div class="input_group">
-      <input id="email_address" name="Email Address" type="text" required>
-      <label>Email Address</label>
-      <div id="email_address_error" class="error_message"></div>
+    <div id="form_inputs">
+      <div class="input_group">
+        <input id="email_address" name="Email Address" type="text" required>
+        <label>Email Address</label>
+        <div id="email_address_error" class="error_message"></div>
+      </div>
+      <div class="input_group">
+        <input id="name_first" type="text" required>
+        <label>First Name</label>
+        <div id="name_first_error" class="error_message"></div>
+      </div>
+      <div class="input_group">
+        <input id="name_last" type="text" required>
+        <label>Last Name</label>
+        <div id="name_last_error" class="error_message"></div>
+      </div>
+      <div class="input_group">
+        <input id="message" type="text" required>
+        <label>Message</label>
+        <div id="message_error" class="error_message"></div>
+      </div>
     </div>
-    <div class="input_group">
-      <input id="name_first" type="text" required>
-      <label>First Name</label>
-      <div class="error_message"></div>
-    </div>
-    <div class="input_group">
-      <input id="name_last" type="text" required>
-      <label>Last Name</label>
-      <div class="error_message"></div>
-    </div>
-    <div class="input_group">
-      <input id="message" type="text" required>
-      <label>Message</label>
-      <div class="error_message"></div>
-    </div>
-    <button id="email_submit" type="button" onclick="email_submit()">Submit</button>
+    <button id="email_submit" type="button">Submit</button>
   </div>
 </main>
 </body>
