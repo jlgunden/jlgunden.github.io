@@ -7,7 +7,6 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/index.css">
   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-  <!-- // <script type="text/javascript" src="js/index.js"></script> -->
   <script type="text/javascript" src="js/nav_drawer.js"></script>
   <script type="text/javascript" src="js/api.js"></script>
   <script type="text/javascript">
@@ -17,8 +16,9 @@
       navigation_drawer.decorate($('#sliding_menu'));
 
       $('#foo').click(function(e) {
-        $(document.body).load('http://jacobgunden.com/contact.html');
+        $(document.body).load('http://www.jacobgunden.com/contact.html');
       });
+
     });
   </script>
 </head>
@@ -33,7 +33,7 @@
   <span class="navigation_title active"><a href="index.html">Home</a></span>
   <span class="navigation_title">About</span>
   <span class="navigation_title">Resume</span>
-  <span id="foo" class="navigation_title">Contact</span>
+  <span id="foo" class="navigation_title"><a href="content.html">Contact</a></span>
 </header>
 <main class="main">
   <div id="content" class="slide_up card">
