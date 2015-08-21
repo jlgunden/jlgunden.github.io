@@ -16,7 +16,8 @@
       navigation_drawer.decorate($('#sliding_menu'));
 
       $('#foo').click(function(e) {
-        $(document.body).load('http://www.jacobgunden.com/contact.html');
+        e.preventDefault();
+        $(document.body).load('http://jacobgunden.com/contact.html');
       });
 
     });
