@@ -15,6 +15,10 @@ h1 {
   margin: 0 0 0 5px;
 }
 
+main {
+  display: block;
+}
+
 button {
   height: 45px;
   width: 150px;
@@ -26,9 +30,6 @@ button {
   font-size: 18px;
   color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-button:focus {
-  outline: 0;
 }
 button:hover {
   background-color: #258cd1;
@@ -312,7 +313,7 @@ button:hover {
 }
 
 input {
-  font-size: 18px;
+  font-size: 16px;
   padding: 10px 10px 10px 5px;
   display: block;
   width: 100%;
@@ -341,7 +342,7 @@ input.input_error {
 
 label {
   color: #999;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
@@ -355,6 +356,17 @@ input:focus ~ label, input:valid ~ label {
   top: -20px;
   font-size: 14px;
   color: #3498db;
+}
+
+.form_inputs {
+  margin-top: 35px;
+}
+
+.submit_error {
+  display: none;
+  margin: 100px auto -75px auto;
+  text-align: center;
+  color: #c0392b;
 }
 
 /* http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */

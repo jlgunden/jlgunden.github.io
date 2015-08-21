@@ -9,6 +9,7 @@
  */
 var form_controller = function(inputs, submit, container) {
   this.inputs_ = inputs;
+  this.loading = false;
   container.focusout(this.focusout_handler_.bind(this));
   submit.click(this.submit_handler_.bind(this));
 };
@@ -109,9 +110,11 @@ form_controller.prototype.get_input_values_ = function() {
 form_controller.prototype.submit_handler_ = function() {
   var self = this;
 
-  if (!this.validate_all_()) {
+  if (!this.validate_all_() || this.loading) {
     return;
   }
+
+  this.loading = true;
 
   var values = this.get_input_values_();
   var args = {
@@ -121,8 +124,9 @@ form_controller.prototype.submit_handler_ = function() {
     'message': values.message
   }
 
-  api('email_address', 'send_email', args, function(response) {
-    // TODO
-    console.log(response);
-  });
+  $('.submit_error').css('display', 'block');
+  // api('email', 'send_email', args, function(response) {
+  //   // TODO
+  //   console.log(response);
+  // });
 };
