@@ -15,10 +15,8 @@ var form_controller = function(inputs, submit, container) {
 
 form_controller.prototype.focusout_handler_ = function(event) {
   var self = this;
-  console.log('blur!');
-  console.log(event.target.id);
+
   if (event.target !== event.currentTarget) {
-    console.log(event.target.id);
     var input = self.inputs_[event.target.id];
     self.validate_(input);
   }
@@ -122,7 +120,6 @@ form_controller.prototype.submit_handler_ = function() {
     'name_last': values.name_last,
     'message': values.message
   }
-  console.log(args);
 
   api('email_address', 'send_email', args, function(response) {
     // TODO
