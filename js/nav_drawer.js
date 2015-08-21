@@ -7,15 +7,15 @@
  */
 var nav_drawer = function(menu) {
   this.menu_ = menu;
-  this.items_order_ = ['Home', 'About', 'Resume', 'Contact'];
+  this.items_order_ = ['Home', 'Projects', 'Resume', 'Contact'];
   this.items_ = {
     'Home': {
       'name': 'Home',
       'link': 'index.html'
     },
-    'About': {
-      'name': 'About',
-      'link': 'about.html'
+    'Projects': {
+      'name': 'Projects',
+      'link': 'Projects.html'
     },
     'Resume': {
       'name': 'Resume',

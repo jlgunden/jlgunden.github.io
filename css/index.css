@@ -93,7 +93,6 @@ button:hover {
 
 .card {
   width: 100%;
-  padding: 35px;
   margin: 100px auto;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -113,6 +112,18 @@ button:hover {
   .card {
     width: 90%;
   }
+}
+
+.card_image {
+  width: 100%;
+  background-color: #f1c40f;
+  height: 300px;
+}
+
+.card_image img {
+  display: block;
+  width: auto;
+  height: auto;
 }
 
 .portrait_container {
