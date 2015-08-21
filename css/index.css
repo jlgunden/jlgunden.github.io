@@ -164,6 +164,7 @@ button:hover {
 }
 
 .lines_button {
+  -webkit-tap-highlight-color: transparent;
   position: relative;
   display: inline-block;
   vertical-align: middle;
