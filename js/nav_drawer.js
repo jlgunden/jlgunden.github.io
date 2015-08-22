@@ -15,7 +15,7 @@ var nav_drawer = function(menu) {
     },
     'Projects': {
       'name': 'Projects',
-      'link': 'Projects.html'
+      'link': 'projects.html'
     },
     'Resume': {
       'name': 'Resume',
