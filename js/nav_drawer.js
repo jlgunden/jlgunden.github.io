@@ -85,14 +85,22 @@ nav_drawer.prototype.decorate = function()  {
   $(document.body).append(this.mask_);
 };
 
+
 window.addEventListener('popstate', function(e) {
   var state = e.state;
 
-  $('#layer').load(state + ' #layer > *', function() {
-    var title = (state === 'index') ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
-    document.title = title;
-  });
-})
+  if (state !== null) {
+    $('#layer').load(state + ' #layer > *', function() {
+      var title = (state === 'index') ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
+      document.title = title;
+    });
+  }
+  else {
+    $('#layer').load(default_state + '#layer > *', function() {
+      document.title = default_title;
+    });
+  }
+});
 
 /**
  * [toggle_open_ description]
