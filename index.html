@@ -58,11 +58,11 @@
 
         // update title active class
         $('.navigation_title.active').removeClass('active');
-        var titles = $('.navigation_title').children();
-        for (var title in titles) {
-          var data = title.data();
+        var children = $('.navigation_title').children();
+        for (var child in children) {
+          var data = $(child).data();
           if (data.path === state || default_state) {
-            title.addClass('active');
+            $(child).addClass('active');
           }
         }
       });
