@@ -27,7 +27,7 @@
 
           if (url !== window.location.pathname) {
             history.pushState(url, null, url);
-            var title = (url === 'index') ? 'Jacob Gunden' : 'Jacob Gunden | ' + url;
+            var title = (url === '/') ? 'Jacob Gunden' : 'Jacob Gunden | ' + url;
             document.title = title;
           }
           window.scrollTo(0, 0);
@@ -42,7 +42,7 @@
         console.log(state);
         if (state !== null) {
           $('#layer').load(state + ' #layer > *', function() {
-            var title = (state === 'index') ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
+            var title = (state === '/') ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
             document.title = title;
           });
         }
