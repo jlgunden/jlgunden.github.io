@@ -19,8 +19,8 @@
       var default_state = window.location.pathname;
       var default_title = document.title;
       window.addEventListener('popstate', function(e) {
-      var state = e.state;
-
+        var state = e.state;
+        console.log(state);
         if (state !== null) {
           $('#layer').load(state + ' #layer > *', function() {
             var title = (state === 'index') ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
