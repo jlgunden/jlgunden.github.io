@@ -95,12 +95,8 @@ button {
 
   &:hover {
     color: #2c3e50;
-    // font-size: 20px;
   }
 
-  // @media screen and (max-width: 900px) {
-  //   display: none;
-  // }
 }
 
 .navigation_title a {
@@ -260,35 +256,24 @@ button {
 }
 
 .project_header {
-  -webkit-animation: fade_in 1s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fade_in 1s; /* Firefox < 16 */
-  -ms-animation: fade_in 1s; /* Internet Explorer */
-  -o-animation: fade_in 1s; /* Opera < 12.1 */
-  animation: fade_in 1s;
+  -webkit-animation: fade_in_left 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fade_in_left 1s; /* Firefox < 16 */
+  -ms-animation: fade_in_left 1s; /* Internet Explorer */
+  -o-animation: fade_in_left 1s; /* Opera < 12.1 */
+  animation: fade_in_left 1s;
 }
 
 .copyright {
-  -webkit-animation: test 5s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: test 5s; /* Firefox < 16 */
-  -ms-animation: test 5s; /* Internet Explorer */
-  -o-animation: test 5s; /* Opera < 12.1 */
-  animation: test 5s;
-}
-
-@keyframes test {
-  0% {
-    opacity: 0;
-    tranform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-  }
+  -webkit-animation: fade_in 5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fade_in 5s; /* Firefox < 16 */
+  -ms-animation: fade_in 5s; /* Internet Explorer */
+  -o-animation: fade_in 5s; /* Opera < 12.1 */
+  animation: fade_in 5s;
 }
 
 @keyframes fade_in {
   0% {
     opacity: 0;
-    transform: translateX(-10%);
   }
   100% {
     opacity: 1;
@@ -298,7 +283,26 @@ button {
 @-webkit-keyframes fade_in {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade_in_left {
+  0% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade_in_left {
+  0% {
+    opacity: 0;
+    -webkit-transform: -webkit-translateX(-10%);
   }
   100% {
     opacity: 1;
