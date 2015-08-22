@@ -72,7 +72,7 @@ nav_drawer.prototype.decorate = function()  {
         // $('.navigation_title .active').removeClass('active');
         // $('.navigation_title').addClass('active');
         history.pushState(null, null, url);
-        document.title('Jacob Gunden | ' + url);
+        document.title = 'Jacob Gunden | ' + url;
         self.toggle_open_();
       });
     }
