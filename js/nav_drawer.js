@@ -89,7 +89,7 @@ window.addEventListener('popstate', function(e) {
   var state = e.state;
 
   $('#layer').load(state + ' #layer > *', function() {
-    var title = (state === 'index') ? 'Jacob Gunden' : 'Jacob Gunden | ' + url;
+    var title = (state === 'index') ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
     document.title = title;
   });
 })
