@@ -24,7 +24,7 @@
 
           $('#layer').load(url + ' #layer > *', function() {
 
-            $('.navigation_title .active').removeClass('active');
+            $('.navigation_title.active').removeClass('active');
             console.log(e.target);
             $(e.target).parent().addClass('active');
 
