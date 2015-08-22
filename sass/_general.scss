@@ -302,7 +302,7 @@ button {
 @-webkit-keyframes fade_in_left {
   0% {
     opacity: 0;
-    -webkit-transform: -webkit-translateX(-10%);
+    -webkit-transform: translateX(-10%);
   }
   100% {
     opacity: 1;
