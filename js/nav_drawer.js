@@ -64,6 +64,7 @@ nav_drawer.prototype.decorate = function()  {
     self.toggle_open_();
   });
 
+  // AJAX page loading
   ul.click(function(e) {
     if (e.target !== e.currentTarget) {
       e.preventDefault();
