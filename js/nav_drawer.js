@@ -64,19 +64,18 @@ nav_drawer.prototype.decorate = function()  {
     self.toggle_open_();
   });
 
-  // ul.click(function(e) {
-  //   if (e.target !== e.currentTarget) {
-  //     e.preventDefault();
-  //     var link = $(e.target).attr('href');
-  //     $('#layer').load(link + ' #layer > *', function() {
-  //       self.toggle_open_();
-  //       parent.empty();
-  //       var navigation_drawer = new nav_drawer(self.menu_);
-  //       navigation_drawer.decorate($(parent));
-  //     });
-  //   }
-  //   e.stopPropagation();
-  // });
+  ul.click(function(e) {
+    if (e.target !== e.currentTarget) {
+      e.preventDefault();
+      var link = $(e.target).attr('href');
+      $('#layer').load(link + ' #layer > *', function() {
+        $('a .active').removeClass('active');
+        $(e.target).addClass('active');
+        self.toggle_open_();
+      });
+    }
+    e.stopPropagation();
+  });
 
   $(document.body).append(this.drawer_);
   $(document.body).append(this.mask_);
