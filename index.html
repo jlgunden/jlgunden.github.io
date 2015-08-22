@@ -26,7 +26,7 @@
 
             $('.navigation_title .active').removeClass('active');
             console.log(e.target);
-            $(e.target).addClass('active');
+            $(e.target).parent().addClass('active');
 
             if (url !== window.location.pathname) {
               history.pushState(url, null, url);
@@ -70,10 +70,10 @@
   </div>
   <span class="title">Jacob Gunden</span>
   <nav class="nav_desktop">
-    <span data-path="" class="navigation_title active"><a href="">Home</a></span>
-    <span data-path="projects" class="navigation_title"><a href="projects">Projects</a></span>
-    <span data-path="resume" class="navigation_title">Resume</span>
-    <span data-path="contact" class="navigation_title"><a href="contact">Contact</a></span>
+    <span class="navigation_title active"><a href="">Home</a></span>
+    <span class="navigation_title"><a href="projects">Projects</a></span>
+    <span class="navigation_title">Resume</span>
+    <span class="navigation_title"><a href="contact">Contact</a></span>
   </nav>
 </header>
 <div id="layer">
