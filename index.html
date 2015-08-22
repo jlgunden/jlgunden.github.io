@@ -14,19 +14,14 @@
 
     $(function() {
       var navigation_drawer = new nav_drawer($('#menu'));
-      navigation_drawer.decorate($('#sliding_menu'));
-
-      // $('.navigation_title.active').click(function(e) {
-      //   console.log('click');
-      //   e.preventDefault();
-      //   $('.main').load('contact .main > *');
-      // });
+      navigation_drawer.decorate($('#mobile_menu'));
     });
 
   </script>
 </head>
 <body>
 <div id="layer">
+<div id="mobile_menu"></div>
 <header id="header" class="header">
   <div id="nav_mobile" class="nav_mobile">
     <section id="menu" class="lines_button x" type="button" role="button" aria-label="Toggle Navigation">

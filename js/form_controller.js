@@ -29,6 +29,7 @@ form_controller.prototype.focusout_handler_ = function(e) {
 /**
  * [validate_ description]
  *
+ * @private
  * @param  {[type]} input [description]
  * @return {[type]}       [description]
  */
@@ -76,6 +77,7 @@ form_controller.prototype.validate_ = function(input) {
 /**
  * Calls validate on all inputs and returns a flag if errors are present
  *
+ * @private
  * @return {Boolean} [description]
  */
 form_controller.prototype.validate_all_ = function() {
@@ -93,6 +95,8 @@ form_controller.prototype.validate_all_ = function() {
 
 /**
  * [get_input_values_ description]
+ *
+ * @private
  * @return {[type]} [description]
  */
 form_controller.prototype.get_input_values_ = function() {
@@ -106,6 +110,7 @@ form_controller.prototype.get_input_values_ = function() {
 /**
  * [submit_handler_ description]
  *
+ * @private
  * @return {[type]} [description]
  */
 form_controller.prototype.submit_handler_ = function() {

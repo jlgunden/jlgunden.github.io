@@ -58,34 +58,43 @@ nav_drawer.prototype.decorate = function(parent)  {
   this.mask_ = $(document.createElement('div'))
     .addClass('mask')
     .click(function() {
-      self.toggle_open();
+      self.toggle_open_();
     });
 
   this.menu_.click(function() {
-    self.toggle_open();
+    self.toggle_open_();
   });
 
   ul.click(function(e) {
     if (e.target !== e.currentTarget) {
       e.preventDefault();
       var link = $(e.target).attr('href');
-      $('#layer').load(link + ' #layer > *');
-      self.toggle_open();
+      $('#layer').load(link + ' #layer > *', function() {
+        self.toggle_open_();
+        parent.empty();
+        var navigation_drawer = new nav_drawer(self.menu_);
+        navigation_drawer.decorate($(parent));
+      });
     }
     e.stopPropagation();
   });
 
-  $(document.body).append(this.drawer_);
-  $(document.body).append(this.mask_);
+  $(parent).append(this.drawer_);
+  $(parent).append(this.mask_);
 };
 
 /**
- * [toggle_open description]
+ * [toggle_open_ description]
+ * @private
  * @return {void} [description]
  */
-nav_drawer.prototype.toggle_open = function() {
+nav_drawer.prototype.toggle_open_ = function() {
   this.drawer_.toggleClass('open');
   this.mask_.toggleClass('open');
   this.menu_.toggleClass('close');
   $(document.body).toggleClass('disable_scroll');
 };
+
+nav_drawer.prototype.dispose_ = function() {
+
+}
