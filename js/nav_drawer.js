@@ -11,7 +11,7 @@ var nav_drawer = function(menu) {
   this.items_ = {
     'Home': {
       'name': 'Home',
-      'link': 'index'
+      'link': '/'
     },
     'Projects': {
       'name': 'Projects',
@@ -67,17 +67,17 @@ nav_drawer.prototype.decorate = function()  {
   ul.click(function(e) {
     if (e.target !== e.currentTarget) {
       e.preventDefault();
+      // update history
       var url = $(e.target).attr('href');
-      self.toggle_open_();
       $('#layer').load(url + ' #layer > *', function() {
-        // $('.navigation_title .active').removeClass('active');
-        // $('.navigation_title').addClass('active');
+        $('.navigation_title .active').removeClass('active');
         if (url !== window.location.pathname) {
           history.pushState(url, null, url);
           var title = (url === 'index') ? 'Jacob Gunden' : 'Jacob Gunden | ' + url;
           document.title = title;
         }
         window.scrollTo(0, 0);
+        self.toggle_open_();
       });
     }
     e.stopPropagation();
