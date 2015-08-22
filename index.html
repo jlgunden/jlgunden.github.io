@@ -60,8 +60,9 @@
         var children = $('.nav_desktop').children();
         for (var i = 0; i < children.length; i++) {
           var data = $(children[i]).data();
-          if (data === state || default_state) {
+          if (data.path === state || data.path === default_state) {
             $(children[i]).addClass('active');
+            break;
           }
         }
       });
