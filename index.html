@@ -17,21 +17,25 @@
       navigation_drawer.decorate();
 
       $('.nav_desktop').click(function(e) {
-        e.preventDefault();
-        console.log('click');
         // update history
-        var url = $(e.target).attr('href');
-        $('#layer').load(url + ' #layer > *', function() {
-          $('.navigation_title .active').removeClass('active');
-          $(e.target).addClass('active');
+        if (e.target !== e.currentTarget) {
+          e.preventDefault();
+          var url = $(e.target).attr('href');
 
-          if (url !== window.location.pathname) {
-            history.pushState(url, null, url);
-            var title = (url === '/') ? 'Jacob Gunden' : 'Jacob Gunden | ' + url;
-            document.title = title;
-          }
-          window.scrollTo(0, 0);
-        });
+          $('#layer').load(url + ' #layer > *', function() {
+
+            $('.navigation_title .active').removeClass('active');
+            console.log(e.target);
+            $(e.target).addClass('active');
+
+            if (url !== window.location.pathname) {
+              history.pushState(url, null, url);
+              var title = (url === '/' || url === "") ? 'Jacob Gunden' : 'Jacob Gunden | ' + url;
+              document.title = title;
+            }
+            window.scrollTo(0, 0);
+          });
+        }
         e.stopPropagation();
       });
 
@@ -42,7 +46,7 @@
         console.log(state);
         if (state !== null) {
           $('#layer').load(state + ' #layer > *', function() {
-            var title = (state === '/') ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
+            var title = (state === '/' || url === "") ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
             document.title = title;
           });
         }
