@@ -11,19 +11,19 @@ var nav_drawer = function(menu) {
   this.items_ = {
     'Home': {
       'name': 'Home',
-      'link': 'index.html'
+      'link': 'jacobgunden.com'
     },
     'Projects': {
       'name': 'Projects',
-      'link': 'projects.html'
+      'link': 'projects'
     },
     'Resume': {
       'name': 'Resume',
-      'link': 'resume.html'
+      'link': 'resume'
     },
     'Contact': {
       'name': 'Contact',
-      'link': 'contact.html'
+      'link': 'contact'
     }
   };
 };

@@ -14,16 +14,10 @@
     $(function() {
       var navigation_drawer = new nav_drawer($('#menu'));
       navigation_drawer.decorate($('#sliding_menu'));
-
-      $('#foo').click(function(e) {
-        e.preventDefault();
-        $('#layer').load('contact.html #layer');
-      })
     });
   </script>
 </head>
 <body>
-<div id="layer">
 <header id="header" class="header">
   <div id="nav_mobile" class="nav_mobile">
     <section id="menu" class="lines_button x" type="button" role="button" aria-label="Toggle Navigation">
@@ -32,9 +26,9 @@
   </div>
   <span class="title">Jacob Gunden</span>
   <span class="navigation_title active"><a href="">Home</a></span>
-  <span class="navigation_title"><a href="projects.html">Projects</a></span>
+  <span class="navigation_title"><a href="projects">Projects</a></span>
   <span class="navigation_title">Resume</span>
-  <span id="foo" class="navigation_title"><a href="contact.html">Contact</a></span>
+  <span id="foo" class="navigation_title"><a href="contact">Contact</a></span>
 </header>
 <main class="main">
   <div id="content" class="slide_up card">
@@ -55,6 +49,5 @@
   </div>
 </main>
 <footer class="fade_in copyright">Created by Jacob Gunden <strong>&#169; 2015</strong></footer>
-</div>
 </body>
 </html>
