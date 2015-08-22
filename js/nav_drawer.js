@@ -42,7 +42,7 @@ nav_drawer.prototype.decorate = function(parent)  {
   var ul = $(document.createElement('ul'));
 
   for (var i = 0; i < this.items_order_.length; i++) {
-    this.drawer_.append(
+    ul.append(
       $(document.createElement('li'))
         .addClass('nav_drawer_item')
         // ehh, there is probably a better way to do this
@@ -53,6 +53,8 @@ nav_drawer.prototype.decorate = function(parent)  {
     );
   }
 
+  this.drawer_.append(ul);
+
   this.mask_ = $(document.createElement('div'))
     .addClass('mask')
     .click(function() {
@@ -61,6 +63,16 @@ nav_drawer.prototype.decorate = function(parent)  {
 
   this.menu_.click(function() {
     self.toggle_open();
+  });
+
+  ul.click(function(e) {
+    if (e.target !== e.currentTarget) {
+      e.preventDefault();
+      var link = $(e.target).attr('href');
+      $('#layer').load(link + ' #layer > *');
+      self.toggle_open();
+    }
+    e.stopPropagation();
   });
 
   $(document.body).append(this.drawer_);

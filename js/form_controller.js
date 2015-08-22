@@ -15,15 +15,15 @@ var form_controller = function(inputs, submit, container) {
   submit.click(this.submit_handler_.bind(this));
 };
 
-form_controller.prototype.focusout_handler_ = function(event) {
+form_controller.prototype.focusout_handler_ = function(e) {
   var self = this;
 
-  if (event.target !== event.currentTarget) {
-    var input = self.inputs_[event.target.id];
+  if (e.target !== e.currentTarget) {
+    var input = self.inputs_[e.target.id];
     self.validate_(input);
   }
 
-  event.stopPropagation();
+  e.stopPropagation();
 };
 
 /**
