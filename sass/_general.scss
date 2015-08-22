@@ -4,7 +4,7 @@ body {
   font-size: 16px;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-image: url('http://www.solidbackgrounds.com/images/2560x1600/2560x1600-light-gray-solid-color-background.jpg');
+  background-image: url('http://www.solidbackgrounds.com/images/1280x720/1280x720-teal-deer-solid-color-background.jpg');
   background-size: 100% 300px;
   background-repeat: no-repeat;
 }
@@ -61,7 +61,7 @@ button {
   z-index: 2;
   top: 0;
   left: 0;
-  padding: 0 20px;
+  padding: 0 0 0 20px;
   width: 100%;
   height: $header_height;
   line-height: 2;
@@ -76,6 +76,14 @@ button {
   font-size: 32px;
   margin-right: 20px;
   cursor: default;
+  width: 200px;
+}
+
+.nav_desktop {
+  display: inline-block;
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 }
 
 .navigation_title {
@@ -89,9 +97,9 @@ button {
     // font-size: 20px;
   }
 
-  @media screen and (max-width: 900px) {
-    display: none;
-  }
+  // @media screen and (max-width: 900px) {
+  //   display: none;
+  // }
 }
 
 .navigation_title a {

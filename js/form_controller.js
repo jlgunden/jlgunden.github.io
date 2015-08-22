@@ -3,8 +3,8 @@
  *
  * @constructor
  * @param  {object} Object containing information about the inputs. Each key must be the id of the input
- * @param  {JQuery} submit Submit button element to submit the data
- * @param  {JQuery} container The parent container of the inputs to attach the event handler to
+ * @param  {jQuery} submit Submit button element to submit the data
+ * @param  {jQuery} container The parent container of the inputs to attach the event handler to
  * @return {void}
  */
 var form_controller = function(inputs, submit, container) {

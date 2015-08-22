@@ -11,11 +11,12 @@
   <script type="text/javascript" src="js/nav_drawer.js"></script>
   <script type="text/javascript" src="js/api.js"></script>
   <script type="text/javascript">
+
     $(function() {
       var navigation_drawer = new nav_drawer($('#menu'));
       navigation_drawer.decorate($('#sliding_menu'));
-
     });
+
   </script>
 </head>
 <body>
@@ -27,10 +28,12 @@
     </section>
   </div>
   <span class="title">Jacob Gunden</span>
-  <span class="navigation_title"><a href="index">Home</a></span>
-  <span class="navigation_title active"><a href="">Projects</a></span>
-  <span class="navigation_title">Resume</span>
-  <span class="navigation_title"><a href="contact">Contact</a></span>
+  <nav class="nav_desktop">
+    <span class="navigation_title"><a href="index">Home</a></span>
+    <span class="navigation_title active"><a href="">Projects</a></span>
+    <span class="navigation_title">Resume</span>
+    <span class="navigation_title"><a href="contact">Contact</a></span>
+  </nav>
 </header>
 <main class="main">
   <div class="project_header">ORS Inc</div>
@@ -44,7 +47,6 @@
     </div>
   </div>
   <div class="card_spacer"></div>
-  <!-- <div class="project_header">ORS Inc Projects</div> -->
   <div class="slide_up card">
     <div class="card_image"></div>
     <div class="card_content">
@@ -69,8 +71,8 @@
     <div class="card_image"><img src="img/alexpletcher.png"></div>
     <div class="card_content">
       <div class="card_title">AlexPletcher.com</div>
-      <div class="card_line"><strong>Description:</strong> Updated 500px Theme to include mobile touch and keyboard events</div>
-      <div class="card_line"><strong>Skills:</strong> JavaScript (jQuery), 500px</div>
+      <div class="card_line"><strong>Description:</strong> Updated 500px Theme to include mobile touch and keyboard events and utilize AJAX techniques to provide a smoother viewing experience.</div>
+      <div class="card_line"><strong>Skills:</strong> JavaScript (jQuery), AJAX, 500px</div>
       <div class="card_link"><a href="http://alexpletcher.com/">Link to alexpletcher</a></div>
     </div>
   </div>
@@ -97,4 +99,13 @@
 <footer class="fade_in copyright">Created by Jacob Gunden <strong>&#169; 2015</strong></footer>
 </div>
 </body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66636437-1', 'auto');
+  ga('send', 'pageview');
+</script>
 </html>

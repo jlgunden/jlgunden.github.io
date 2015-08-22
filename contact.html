@@ -53,6 +53,7 @@
   </script>
 </head>
 <body>
+<div id="layer">
 <header id="header" class="header">
   <div id="nav_mobile" class="nav_mobile">
     <section id="menu" class="lines_button x" type="button" role="button" aria-label="Toggle Navigation">
@@ -60,10 +61,12 @@
     </section>
   </div>
   <span class="title">Jacob Gunden</span>
-  <span class="navigation_title"><a href="index">Home</a></span>
-  <span class="navigation_title"><a href="projects">Projects</a></span>
-  <span class="navigation_title">Resume</span>
-  <span class="navigation_title active"><a href="">Contact</a></span>
+  <nav class="nav_desktop">
+    <span class="navigation_title"><a href="index">Home</a></span>
+    <span class="navigation_title"><a href="projects">Projects</a></span>
+    <span class="navigation_title">Resume</span>
+    <span class="navigation_title active"><a href="">Contact</a></span>
+  </nav>
 </header>
 <main class="main">
   <div id="content" class="slide_up card">
@@ -98,5 +101,15 @@
   </div>
 </main>
 <footer class="fade_in copyright">Created by Jacob Gunden <strong>&#169; 2015</strong></footer>
+</div>
 </body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66636437-1', 'auto');
+  ga('send', 'pageview');
+</script>
 </html>
