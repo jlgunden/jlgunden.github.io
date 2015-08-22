@@ -46,7 +46,7 @@
         console.log(state);
         if (state !== null) {
           $('#layer').load(state + ' #layer > *', function() {
-            var title = (state === '/' || url === "") ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
+            var title = (state === '/' || state === "") ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
             document.title = title;
           });
         }
@@ -54,6 +54,16 @@
           $('#layer').load(default_state + ' #layer > *', function() {
             document.title = default_title;
           });
+        }
+
+        // update title active class
+        $('.navigation_title.active').removeClass('active');
+        var titles = $('.navigation_title').children();
+        for (var title in titles) {
+          var data = title.data();
+          if (data.path === state || default_state) {
+            title.addClass('active');
+          }
         }
       });
 
@@ -70,10 +80,10 @@
   </div>
   <span class="title">Jacob Gunden</span>
   <nav class="nav_desktop">
-    <span class="navigation_title active"><a href="">Home</a></span>
-    <span class="navigation_title"><a href="projects">Projects</a></span>
-    <span class="navigation_title">Resume</span>
-    <span class="navigation_title"><a href="contact">Contact</a></span>
+    <span data-path="/" class="navigation_title active"><a href="">Home</a></span>
+    <span data-path="projects" class="navigation_title"><a href="projects">Projects</a></span>
+    <span data-path="resume" class="navigation_title">Resume</span>
+    <span data-path="contact" class="navigation_title"><a href="contact">Contact</a></span>
   </nav>
 </header>
 <div id="layer">
