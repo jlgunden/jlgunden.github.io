@@ -28,6 +28,8 @@ var default_title = document.title;
 window.addEventListener('popstate', function(e) {
   var state = e.state;
 
+  console.log(state);
+
   if (state !== null) {
     $('#layer').load(state + ' #layer > *', function() {
       var title = (state === '/' || state === "") ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
