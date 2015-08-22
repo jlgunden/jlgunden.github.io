@@ -4,6 +4,9 @@ body {
   font-size: 16px;
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  background-image: url('http://www.solidbackgrounds.com/images/2560x1600/2560x1600-light-gray-solid-color-background.jpg');
+  background-size: 100% 300px;
+  background-repeat: no-repeat;
 }
 
 html {
@@ -33,10 +36,12 @@ button {
   &:hover {
     background-color: darken($header_color, 5%);
   }
-}
 
-strong{
- font-weight:bold;
+  &:disabled {
+    background-color: #95a5a6;
+    cursor: default;
+  }
+
 }
 
 .disable_scroll {
@@ -44,9 +49,11 @@ strong{
 }
 
 .copyright {
+  font-size: 14px;
+  width: 100%;
+  margin: 0 auto;
   text-align: center;
-  width: 240px;
-  margin: 5px auto 15px auto;
+  padding-bottom: 15px;
 }
 
 .header {
@@ -119,7 +126,6 @@ strong{
 
 .card {
   width: 100%;
-  max-height: 600px;
   margin: 0 auto;
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -149,7 +155,7 @@ strong{
 
 .card_link a {
   text-decoration: none;
-  color: $header_color;
+  color: $accent_color;
 }
 
 .card_image {
@@ -164,7 +170,7 @@ strong{
 
 .card_title {
   font-weight: bold;
-  font-size: 26px;
+  font-size: 24px;
   margin-bottom: 15px;
 }
 
@@ -174,7 +180,7 @@ strong{
 
 .portrait_container {
   width: 250px;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 25px auto;
 }
 
 .portrait_container img {
@@ -183,7 +189,21 @@ strong{
   border: 0px solid black;
   border-radius: 150px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
 
+.sites_container {
+  text-align: center;
+  width: 280px;
+  margin: 50px auto 0 auto;
+}
+
+.sites_container a {
+  margin: 0 10px 0 10px;
+}
+
+.sites_container img {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
 }
 
 .contact_container {
@@ -236,6 +256,24 @@ strong{
   -ms-animation: fade_in 1s; /* Internet Explorer */
   -o-animation: fade_in 1s; /* Opera < 12.1 */
   animation: fade_in 1s;
+}
+
+.copyright {
+  -webkit-animation: test 5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: test 5s; /* Firefox < 16 */
+  -ms-animation: test 5s; /* Internet Explorer */
+  -o-animation: test 5s; /* Opera < 12.1 */
+  animation: test 5s;
+}
+
+@keyframes test {
+  0% {
+    opacity: 0;
+    tranform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fade_in {

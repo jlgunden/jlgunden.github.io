@@ -9,6 +9,7 @@
  */
 var form_controller = function(inputs, submit, container) {
   this.inputs_ = inputs;
+  this.submit_ = submit;
   this.loading = false;
   container.focusout(this.focusout_handler_.bind(this));
   submit.click(this.submit_handler_.bind(this));
@@ -115,6 +116,8 @@ form_controller.prototype.submit_handler_ = function() {
   }
 
   this.loading = true;
+  this.submit_.html('Sending...');
+  // this.submit_.attr('disabled', true);
 
   var values = this.get_input_values_();
   var args = {
