@@ -30,10 +30,9 @@ var nav_drawer = function(menu) {
 
 /**
  * [decorate description]
- * @param  {[type]} parent [description]
  * @return {void}        [description]
  */
-nav_drawer.prototype.decorate = function(parent)  {
+nav_drawer.prototype.decorate = function()  {
   var self = this;
 
   this.drawer_ = $(document.createElement('div'))
@@ -65,22 +64,22 @@ nav_drawer.prototype.decorate = function(parent)  {
     self.toggle_open_();
   });
 
-  ul.click(function(e) {
-    if (e.target !== e.currentTarget) {
-      e.preventDefault();
-      var link = $(e.target).attr('href');
-      $('#layer').load(link + ' #layer > *', function() {
-        self.toggle_open_();
-        parent.empty();
-        var navigation_drawer = new nav_drawer(self.menu_);
-        navigation_drawer.decorate($(parent));
-      });
-    }
-    e.stopPropagation();
-  });
+  // ul.click(function(e) {
+  //   if (e.target !== e.currentTarget) {
+  //     e.preventDefault();
+  //     var link = $(e.target).attr('href');
+  //     $('#layer').load(link + ' #layer > *', function() {
+  //       self.toggle_open_();
+  //       parent.empty();
+  //       var navigation_drawer = new nav_drawer(self.menu_);
+  //       navigation_drawer.decorate($(parent));
+  //     });
+  //   }
+  //   e.stopPropagation();
+  // });
 
-  $(parent).append(this.drawer_);
-  $(parent).append(this.mask_);
+  $(document.body).append(this.drawer_);
+  $(document.body).append(this.mask_);
 };
 
 /**
