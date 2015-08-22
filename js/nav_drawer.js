@@ -68,18 +68,7 @@ nav_drawer.prototype.decorate = function()  {
   ul.click(function(e) {
     if (e.target !== e.currentTarget) {
       e.preventDefault();
-      // update history
-      var url = $(e.target).attr('href');
-      $('#layer').load(url + ' #layer > *', function() {
-        $('.navigation_title .active').removeClass('active');
-        if (url !== window.location.pathname) {
-          history.pushState(url, null, url);
-          var title = (url === 'index') ? 'Jacob Gunden' : 'Jacob Gunden | ' + url;
-          document.title = title;
-        }
-        window.scrollTo(0, 0);
-        self.toggle_open_();
-      });
+      change_state();
     }
     e.stopPropagation();
   });

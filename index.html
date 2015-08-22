@@ -10,61 +10,20 @@
   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="js/nav_drawer.js"></script>
   <script type="text/javascript" src="js/api.js"></script>
+  <script type="text/javascript" src="js/history.js"></script>
   <script type="text/javascript">
 
     $(function() {
       var navigation_drawer = new nav_drawer($('#menu'));
       navigation_drawer.decorate();
 
+      // change
       $('.nav_desktop').click(function(e) {
-        // update history
         if (e.target !== e.currentTarget) {
           e.preventDefault();
-          var url = $(e.target).attr('href');
-
-          $('#layer').load(url + ' #layer > *', function() {
-
-            $('.navigation_title.active').removeClass('active');
-            $(e.target).parent().addClass('active');
-
-            if (url !== window.location.pathname) {
-              history.pushState(url, null, url);
-              var title = (url === '/' || url === "") ? 'Jacob Gunden' : 'Jacob Gunden | ' + url;
-              document.title = title;
-            }
-            window.scrollTo(0, 0);
-          });
+          change_state(e);
         }
         e.stopPropagation();
-      });
-
-      var default_state = window.location.pathname;
-      var default_title = document.title;
-      window.addEventListener('popstate', function(e) {
-        var state = e.state;
-
-        if (state !== null) {
-          $('#layer').load(state + ' #layer > *', function() {
-            var title = (state === '/' || state === "") ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
-            document.title = title;
-          });
-        }
-        else {
-          $('#layer').load(default_state + ' #layer > *', function() {
-            document.title = default_title;
-          });
-        }
-
-        // update title active class
-        $('.navigation_title.active').removeClass('active');
-        var children = $('.nav_desktop').children();
-        for (var i = 0; i < children.length; i++) {
-          var data = $(children[i]).data();
-          if (data.path === state || data.path === default_state) {
-            $(children[i]).addClass('active');
-            break;
-          }
-        }
       });
 
     });
