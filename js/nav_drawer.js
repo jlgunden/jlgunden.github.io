@@ -68,17 +68,16 @@ nav_drawer.prototype.decorate = function()  {
     if (e.target !== e.currentTarget) {
       e.preventDefault();
       var url = $(e.target).attr('href');
+      self.toggle_open_();
       $('#layer').load(url + ' #layer > *', function() {
         // $('.navigation_title .active').removeClass('active');
         // $('.navigation_title').addClass('active');
         if (url !== window.location.pathname) {
           history.pushState(url, null, url);
-          var title = (url === 'index') ? '' : 'Jacob Gunden | ' + url;
+          var title = (url === 'index') ? 'Jacob Gunden' : 'Jacob Gunden | ' + url;
           document.title = title;
         }
         window.scrollTo(0, 0);
-        self.toggle_open_();
-
       });
     }
     e.stopPropagation();
