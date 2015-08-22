@@ -1,7 +1,6 @@
 body {
   height: 100%;
   background-color: #ecf0f1;
-  display: none;
   font-size: 16px;
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -9,11 +8,6 @@ body {
 
 html {
   height: 100%;
-}
-
-h1 {
-  color: $header_color;
-  margin: 0 0 0 5px;
 }
 
 main {
@@ -112,8 +106,20 @@ strong{
   }
 }
 
+.project_header {
+  font-size: 30px;
+  color: $header_color;
+  margin: 0 auto 30px auto;
+  height: 20px;
+
+  @media screen and (max-width: 900px) {
+    width: 90%;
+  }
+}
+
 .card {
   width: 100%;
+  max-height: 600px;
   margin: 0 auto;
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -125,13 +131,30 @@ strong{
 
 .card_content {
   padding: 35px;
+
+  @media screen and (max-width: 600px) {
+    padding: 15px;
+  }
 }
 
 .card_line {
   margin-bottom: 15px;
 }
 
+.card_link {
+  padding-top: 15px;
+  margin: 15px 0 0 0;
+  border-top: 1px solid #95a5a6;
+}
+
+.card_link a {
+  text-decoration: none;
+  color: $header_color;
+}
+
 .card_image {
+  width: 100%;
+  max-height: 290px;
   overflow: hidden;
 }
 
@@ -144,22 +167,10 @@ strong{
   font-size: 26px;
   margin-bottom: 15px;
 }
-// .card img {
-//   max-width: 300px;
-// }
-// .card_image {
-//   width: 100%;
-//   background-color: #f1c40f;
-//   height: 300px;
-// }
 
-// .card_image img {
-//   display: block;
-//   // max-width:450px;
-//   // max-height:200px;
-//   width: auto;
-//   height: auto;
-// }
+.card_spacer {
+  height: 30px;
+}
 
 .portrait_container {
   width: 250px;
@@ -181,6 +192,11 @@ strong{
   margin: auto;
 }
 
+.contact_header {
+  font-size: 30px;
+  color: $header_color;
+}
+
 .slide_up {
   animation-name: slide_up;
   -webkit-animation-name: slide_up;
@@ -196,12 +212,48 @@ strong{
 
 @keyframes slide_up {
   0% {
+    opacity: 0;
     transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes slide_up {
   0% {
+    opacity: 0;
     -webkit-transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.project_header {
+  -webkit-animation: fade_in 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fade_in 1s; /* Firefox < 16 */
+  -ms-animation: fade_in 1s; /* Internet Explorer */
+  -o-animation: fade_in 1s; /* Opera < 12.1 */
+  animation: fade_in 1s;
+}
+
+@keyframes fade_in {
+  0% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade_in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
   }
 }

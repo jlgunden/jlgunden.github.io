@@ -124,7 +124,6 @@ form_controller.prototype.submit_handler_ = function() {
     'message': values.message
   }
 
-  $('.submit_error').css('display', 'block');
   // api('email', 'send_email', args, function(response) {
   //   // TODO
   //   console.log(response);

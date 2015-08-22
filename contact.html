@@ -13,7 +13,6 @@
   <script type="text/javascript">
 
     $(function() {
-      $(document.body).fadeIn(1500);
       var navigation_drawer = new nav_drawer($('#menu'));
       navigation_drawer.decorate($('#sliding_menu'));
 
@@ -53,6 +52,7 @@
   </script>
 </head>
 <body>
+<div id="layer">
 <header id="header" class="header">
   <div id="nav_mobile" class="nav_mobile">
     <section id="menu" class="lines_button x" type="button" role="button" aria-label="Toggle Navigation">
@@ -61,16 +61,14 @@
   </div>
   <span class="title">Jacob Gunden</span>
   <span class="navigation_title"><a href="index.html">Home</a></span>
-  <span class="navigation_title">Projects</span>
+  <span class="navigation_title"><a href="projects.html">Projects</a></span>
   <span class="navigation_title">Resume</span>
-  <span class="navigation_title active"><a href="contact.html">Contact</a></span>
+  <span class="navigation_title active"><a href="">Contact</a></span>
 </header>
 <main class="main">
-  <div id="email_submit_error" class="submit_error">Oops! Something went wrong and the email was
-  unable to be delivered. Please try again later :)</div>
   <div id="content" class="slide_up card">
     <div class="card_content">
-      <h1>Reach out to me</h1>
+      <div class="contact_header">Say Hello</div>
       <div id="form_inputs" class="form_inputs">
         <div class="input_group">
           <input id="email_address" name="Email Address" type="text" required>
@@ -97,5 +95,6 @@
     </div>
   </div>
 </main>
+</div>
 </body>
 </html>
