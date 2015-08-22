@@ -25,7 +25,6 @@
           $('#layer').load(url + ' #layer > *', function() {
 
             $('.navigation_title.active').removeClass('active');
-            console.log(e.target);
             $(e.target).parent().addClass('active');
 
             if (url !== window.location.pathname) {
@@ -43,7 +42,7 @@
       var default_title = document.title;
       window.addEventListener('popstate', function(e) {
         var state = e.state;
-        console.log(state);
+
         if (state !== null) {
           $('#layer').load(state + ' #layer > *', function() {
             var title = (state === '/' || state === "") ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
@@ -58,11 +57,11 @@
 
         // update title active class
         $('.navigation_title.active').removeClass('active');
-        var children = $('.navigation_title').children();
-        for (var child in children) {
-          var data = $(child).data();
-          if (data.path === state || default_state) {
-            $(child).addClass('active');
+        var children = $('.nav_desktop').children();
+        for (var i = 0; i < children.length; i++) {
+          var data = $(children[i]).data();
+          if (data === state || default_state) {
+            $(children[i]).addClass('active');
           }
         }
       });
