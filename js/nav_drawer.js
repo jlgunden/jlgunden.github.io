@@ -11,7 +11,7 @@ var nav_drawer = function(menu) {
   this.items_ = {
     'Home': {
       'name': 'Home',
-      'link': 'jacobgunden.com'
+      'link': 'index'
     },
     'Projects': {
       'name': 'Projects',
