@@ -67,10 +67,12 @@ nav_drawer.prototype.decorate = function()  {
   ul.click(function(e) {
     if (e.target !== e.currentTarget) {
       e.preventDefault();
-      var link = $(e.target).attr('href');
-      $('#layer').load(link + ' #layer > *', function() {
-        $('a .active').removeClass('active');
-        $(e.target).addClass('active');
+      var url = $(e.target).attr('href');
+      $('#layer').load(url + ' #layer > *', function() {
+        // $('.navigation_title .active').removeClass('active');
+        // $('.navigation_title').addClass('active');
+        history.pushState(null, null, url);
+        document.title('Jacob Gunden | ' + url);
         self.toggle_open_();
       });
     }
