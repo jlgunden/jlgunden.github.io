@@ -18,6 +18,22 @@
 
       var default_state = window.location.pathname;
       var default_title = document.title;
+      window.addEventListener('popstate', function(e) {
+      var state = e.state;
+
+        if (state !== null) {
+          $('#layer').load(state + ' #layer > *', function() {
+            var title = (state === 'index') ? 'Jacob Gunden' : 'Jacob Gunden | ' + state;
+            document.title = title;
+          });
+        }
+        else {
+          $('#layer').load(default_state + '#layer > *', function() {
+            document.title = default_title;
+          });
+        }
+      });
+
     });
 
   </script>
