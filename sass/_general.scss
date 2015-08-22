@@ -41,8 +41,18 @@ button {
   }
 }
 
+strong{
+ font-weight:bold;
+}
+
 .disable_scroll {
   overflow: hidden;
+}
+
+.copyright {
+  text-align: center;
+  width: 240px;
+  margin: 5px auto 15px auto;
 }
 
 .header {
@@ -75,7 +85,7 @@ button {
 
   &:hover {
     color: #2c3e50;
-    font-size: 20px;
+    // font-size: 20px;
   }
 
   @media screen and (max-width: 900px) {
@@ -94,47 +104,62 @@ button {
 
 .main {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 0px 0px 20px 0px;
+  margin: 0 auto 0 auto;
+  padding: 100px 0 20px 0;
+
+  @media screen and (max-width: 590px) {
+    padding-top: 90px;
+  }
 }
 
 .card {
   width: 100%;
-  padding: 35px;
-  margin: 100px auto 0px auto;
+  margin: 0 auto;
   background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
   @media screen and (max-width: 900px) {
-    width: 80%;
-  }
-
-  @media screen and (max-width: 590px) {
-    margin-top: 90px;
-    width: 75%;
-  }
-
-  @media screen and (max-width: 500px) {
     width: 90%;
   }
 }
 
-// .card img {
-//   max-width: 300px;
-// }
+.card_content {
+  padding: 35px;
+}
+
+.card_line {
+  margin-bottom: 15px;
+}
+
 .card_image {
-  width: 100%;
-  background-color: #f1c40f;
-  height: 300px;
+  overflow: hidden;
 }
 
 .card_image img {
-  display: block;
-  // max-width:450px;
-  // max-height:200px;
-  width: auto;
-  height: auto;
+  width: 100%;
 }
+
+.card_title {
+  font-weight: bold;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+// .card img {
+//   max-width: 300px;
+// }
+// .card_image {
+//   width: 100%;
+//   background-color: #f1c40f;
+//   height: 300px;
+// }
+
+// .card_image img {
+//   display: block;
+//   // max-width:450px;
+//   // max-height:200px;
+//   width: auto;
+//   height: auto;
+// }
 
 .portrait_container {
   width: 250px;
@@ -146,7 +171,8 @@ button {
   width: 250px;
   border: 0px solid black;
   border-radius: 150px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
 }
 
 .contact_container {
@@ -155,9 +181,9 @@ button {
   margin: auto;
 }
 
-.slide_up{
-  animation-name: slideUp;
-  -webkit-animation-name: slideUp;
+.slide_up {
+  animation-name: slide_up;
+  -webkit-animation-name: slide_up;
 
   animation-duration: 1s;
   -webkit-animation-duration: 1s;
@@ -168,13 +194,13 @@ button {
   visibility: visible !important;
 }
 
-@keyframes slideUp {
+@keyframes slide_up {
   0% {
     transform: translateY(10%);
   }
 }
 
-@-webkit-keyframes slideUp {
+@-webkit-keyframes slide_up {
   0% {
     -webkit-transform: translateY(10%);
   }

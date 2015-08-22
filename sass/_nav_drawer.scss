@@ -5,7 +5,7 @@ $button-size: 35px;
 @mixin line {
   display: inline-block;
   width: $button-size;
-  height: $button-size/7;
+  height: $button-size/9;
   background: $menu_icon_color;
   border-radius: $button-size/14;
   transition: $transition;

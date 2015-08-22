@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta charset="UTF-8" author="Jacob Gunden">
   <link rel="stylesheet" href="css/index.css">
-  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="js/nav_drawer.js"></script>
   <script type="text/javascript" src="js/api.js"></script>
@@ -69,30 +69,32 @@
   <div id="email_submit_error" class="submit_error">Oops! Something went wrong and the email was
   unable to be delivered. Please try again later :)</div>
   <div id="content" class="slide_up card">
-    <h1>Reach out to me</h1>
-    <div id="form_inputs" class="form_inputs">
-      <div class="input_group">
-        <input id="email_address" name="Email Address" type="text" required>
-        <label>Email Address</label>
-        <div id="email_address_error" class="error_message"></div>
+    <div class="card_content">
+      <h1>Reach out to me</h1>
+      <div id="form_inputs" class="form_inputs">
+        <div class="input_group">
+          <input id="email_address" name="Email Address" type="text" required>
+          <label>Email Address</label>
+          <div id="email_address_error" class="error_message"></div>
+        </div>
+        <div class="input_group">
+          <input id="name_first" type="text" required>
+          <label>First Name</label>
+          <div id="name_first_error" class="error_message"></div>
+        </div>
+        <div class="input_group">
+          <input id="name_last" type="text" required>
+          <label>Last Name</label>
+          <div id="name_last_error" class="error_message"></div>
+        </div>
+        <div class="input_group">
+          <input id="message" type="text" required>
+          <label>Message</label>
+          <div id="message_error" class="error_message"></div>
+        </div>
       </div>
-      <div class="input_group">
-        <input id="name_first" type="text" required>
-        <label>First Name</label>
-        <div id="name_first_error" class="error_message"></div>
-      </div>
-      <div class="input_group">
-        <input id="name_last" type="text" required>
-        <label>Last Name</label>
-        <div id="name_last_error" class="error_message"></div>
-      </div>
-      <div class="input_group">
-        <input id="message" type="text" required>
-        <label>Message</label>
-        <div id="message_error" class="error_message"></div>
-      </div>
+      <button id="email_submit" type="button">Submit</button>
     </div>
-    <button id="email_submit" type="button">Submit</button>
   </div>
 </main>
 </body>
