@@ -199,15 +199,6 @@ button:disabled {
   margin: 50px auto 0 auto;
 }
 
-.sites_container a {
-  margin: 0 10px 0 10px;
-}
-
-.sites_container img {
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-}
-
 .contact_container {
   background-color: grey;
   display: inline-block;
@@ -216,6 +207,30 @@ button:disabled {
 
 .contact_header {
   font-size: 30px;
+  color: #388E3C;
+}
+
+.button_float {
+  display: inline-block;
+  background-color: #fff;
+  width: 55.5px;
+  height: 55.5px;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin: 0 15px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  cursor: pointer;
+}
+.button_float:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  -tranform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+}
+
+.button_float i {
+  font-size: 25px;
+  line-height: 59.5px;
   color: #388E3C;
 }
 
@@ -260,15 +275,15 @@ button:disabled {
 }
 
 .copyright {
-  -webkit-animation: fade_in 5s;
+  -webkit-animation: fade_in 4s;
   /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fade_in 5s;
+  -moz-animation: fade_in 4s;
   /* Firefox < 16 */
-  -ms-animation: fade_in 5s;
+  -ms-animation: fade_in 4s;
   /* Internet Explorer */
-  -o-animation: fade_in 5s;
+  -o-animation: fade_in 4s;
   /* Opera < 12.1 */
-  animation: fade_in 5s;
+  animation: fade_in 4s;
 }
 
 @keyframes fade_in {

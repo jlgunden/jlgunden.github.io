@@ -193,6 +193,7 @@ button {
   width: 250px;
   border: 0px solid black;
   border-radius: 150px;
+  // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -202,14 +203,14 @@ button {
   margin: 50px auto 0 auto;
 }
 
-.sites_container a {
-  margin: 0 10px 0 10px;
-}
+// .sites_container a {
+//   margin: 0 10px 0 10px;
+// }
 
-.sites_container img {
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-}
+// .sites_container img {
+//   filter: grayscale(100%);
+//   -webkit-filter: grayscale(100%);
+// }
 
 .contact_container {
   background-color: grey;
@@ -219,6 +220,31 @@ button {
 
 .contact_header {
   font-size: 30px;
+  color: $header_color;
+}
+
+.button_float {
+  display: inline-block;
+  background-color: $white;
+  width: 55.5px;
+  height: 55.5px;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin: 0 15px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    -tranform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+  }
+}
+
+.button_float i {
+  font-size: 25px;
+  line-height: 59.5px;
   color: $header_color;
 }
 

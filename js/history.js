@@ -23,7 +23,7 @@ var change_state = function(e) {
     window.scrollTo(0, 0);
 
     // Todo: this works for now but isn't practical if I expand the site
-    if (url === 'contact') {
+    if (url === 'contact' && default_state !== 'contact') {
       var inputs = {
         'email_address': {
           'input_element': $('#email_address'),
