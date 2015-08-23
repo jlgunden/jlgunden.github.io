@@ -264,8 +264,8 @@ button {
 
 @keyframes slide_up {
   0% {
-    opacity: 0;
-    transform: translateY(10%);
+    // opacity: 0;
+    transform: translateY(15%);
   }
   100% {
     opacity: 1;
@@ -274,8 +274,8 @@ button {
 
 @-webkit-keyframes slide_up {
   0% {
-    opacity: 0;
-    -webkit-transform: translateY(10%);
+    // opacity: 0;
+    -webkit-transform: translateY(15%);
   }
   100% {
     opacity: 1;
