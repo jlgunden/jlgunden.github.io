@@ -247,7 +247,8 @@ button:disabled {
 
 @keyframes slide_up {
   0% {
-    transform: translateY(15%);
+    opacity: 0;
+    transform: translateY(10%);
   }
   100% {
     opacity: 1;
@@ -255,7 +256,8 @@ button:disabled {
 }
 @-webkit-keyframes slide_up {
   0% {
-    -webkit-transform: translateY(15%);
+    opacity: 0;
+    -webkit-transform: translateY(10%);
   }
   100% {
     opacity: 1;
