@@ -132,8 +132,15 @@ form_controller.prototype.submit_handler_ = function() {
     'message': values.message
   }
 
-  // api('email', 'send_email', args, function(response) {
-  //   // TODO
-  //   console.log(response);
-  // });
+  api('email', 'send_email', args, function(response) {
+    // TODO: no alerts
+    if (response.error) {
+      self.submit_.html('Send');
+      alert('Oops! something went wrong: ' + error);
+    }
+    else {
+      self.submit_.html('Send');
+      alert('Thanks for reaching out to me! I will respond shortly');
+    }
+  });
 };

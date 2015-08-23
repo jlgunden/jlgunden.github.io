@@ -264,11 +264,11 @@ button {
 }
 
 .copyright {
-  -webkit-animation: fade_in 5s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fade_in 5s; /* Firefox < 16 */
-  -ms-animation: fade_in 5s; /* Internet Explorer */
-  -o-animation: fade_in 5s; /* Opera < 12.1 */
-  animation: fade_in 5s;
+  -webkit-animation: fade_in 4s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fade_in 4s; /* Firefox < 16 */
+  -ms-animation: fade_in 4s; /* Internet Explorer */
+  -o-animation: fade_in 4s; /* Opera < 12.1 */
+  animation: fade_in 4s;
 }
 
 @keyframes fade_in {
