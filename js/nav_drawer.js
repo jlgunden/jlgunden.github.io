@@ -69,7 +69,6 @@ nav_drawer.prototype.decorate = function()  {
     if (e.target !== e.currentTarget) {
       e.preventDefault();
       change_state(e);
-      window.scrollTo(0, 0);
       self.toggle_open_();
     }
     e.stopPropagation();

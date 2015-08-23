@@ -19,7 +19,43 @@ var change_state = function(e) {
       var title = (url === '/' || url === "") ? 'Jacob Gunden' : 'Jacob Gunden | ' + url;
       document.title = title;
     }
+
     window.scrollTo(0, 0);
+
+    // Todo: this works for now but isn't practical if I expand the site
+    if (url === 'contact') {
+      var inputs = {
+        'email_address': {
+          'input_element': $('#email_address'),
+          'error_message_element': $('#email_address_error'),
+          'name': 'Email address',
+          'type': 'email',
+          'required': true
+        },
+        'name_first': {
+          'input_element': $('#name_first'),
+          'error_message_element': $('#email_address_error'),
+          'name': 'First name',
+          'type': 'string',
+          'required': false
+        },
+        'name_last': {
+          'input_element': $('#name_last'),
+          'error_message_element': $('#name_last_error'),
+          'name': 'Last name',
+          'type': 'string',
+          'required': false
+        },
+        'message': {
+          'input_element': $('#message'),
+          'error_message_element': $('#message_error'),
+          'name': 'Message',
+          'type': 'string',
+          'required': false
+        }
+      };
+      var form = new form_controller(inputs, $('#email_submit'), $('#form_inputs'));
+    }
   });
 }
 

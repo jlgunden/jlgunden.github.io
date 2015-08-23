@@ -1,7 +1,7 @@
 
 /**
- * api function to easily construct ajax requests
- * 
+ * function to easily construct ajax requests to my API
+ *
  * @param  {string} module
  * @param  {string} method
  * @param  {object} arguments
@@ -10,7 +10,7 @@
  * @return {void}
  */
 var api = function(module, method, arguments, handler, error_handler) {
-  
+
   var data = {
     'module': module,
     'method': method,
