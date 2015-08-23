@@ -196,7 +196,8 @@ button:disabled {
 .sites_container {
   text-align: center;
   width: 280px;
-  margin: 50px auto 0 auto;
+  margin: 60px auto 0 auto;
+  padding-bottom: 25px;
 }
 
 .contact_container {
