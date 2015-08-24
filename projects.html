@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Jacob Gunden | Projects</title>
+  <title>Jacob Gunden | projects</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta charset="UTF-8" author="Jacob Gunden">
   <link rel="icon" type="image/png" href="img/j_favicon.png">
@@ -12,20 +12,11 @@
   <script type="text/javascript" src="js/api.js"></script>
   <script type="text/javascript" src="js/history.js"></script>
   <script type="text/javascript" src="js/form_controller.js"></script>
+  <script type="text/javascript" src="js/init/init.js"></script>
   <script type="text/javascript">
 
     $(function() {
-      var navigation_drawer = new nav_drawer($('#menu'));
-      navigation_drawer.decorate();
-
-      // change state for desktop
-      $('.nav_desktop').click(function(e) {
-        if (e.target !== e.currentTarget) {
-          e.preventDefault();
-          change_state(e);
-        }
-        e.stopPropagation();
-      });
+      initializer.init('projects');
     });
 
   </script>

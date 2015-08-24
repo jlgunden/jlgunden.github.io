@@ -44,7 +44,6 @@ nav_drawer.prototype.decorate = function()  {
     ul.append(
       $(document.createElement('li'))
         .addClass('nav_drawer_item')
-        // ehh, there is probably a better way to do this
         .html(
           '<a href="' + this.items_[this.items_order_[i]].link + '">' +
           this.items_[this.items_order_[i]].name + '</a>'

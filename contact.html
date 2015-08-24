@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Jacob Gunden | Contact</title>
+  <title>Jacob Gunden | contact</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta charset="UTF-8" author="Jacob Gunden">
   <link rel="icon" type="image/png" href="img/j_favicon.png">
@@ -12,52 +12,11 @@
   <script type="text/javascript" src="js/api.js"></script>
   <script type="text/javascript" src="js/history.js"></script>
   <script type="text/javascript" src="js/form_controller.js"></script>
+  <script type="text/javascript" src="js/init/init.js"></script>
   <script type="text/javascript">
 
     $(function() {
-      var navigation_drawer = new nav_drawer($('#menu'));
-      navigation_drawer.decorate();
-
-      // change state for desktop
-      $('.nav_desktop').click(function(e) {
-        if (e.target !== e.currentTarget) {
-          e.preventDefault();
-          change_state(e);
-        }
-        e.stopPropagation();
-      });
-
-      var inputs = {
-        'email_address': {
-          'input_element': $('#email_address'),
-          'error_message_element': $('#email_address_error'),
-          'name': 'Email address',
-          'type': 'email',
-          'required': true
-        },
-        'name_first': {
-          'input_element': $('#name_first'),
-          'error_message_element': $('#email_address_error'),
-          'name': 'First name',
-          'type': 'string',
-          'required': false
-        },
-        'name_last': {
-          'input_element': $('#name_last'),
-          'error_message_element': $('#name_last_error'),
-          'name': 'Last name',
-          'type': 'string',
-          'required': false
-        },
-        'message': {
-          'input_element': $('#message'),
-          'error_message_element': $('#message_error'),
-          'name': 'Message',
-          'type': 'string',
-          'required': false
-        }
-      };
-      var form = new form_controller(inputs, $('#email_submit'), $('#form_inputs'));
+      initializer.init('contact');
     });
 
   </script>

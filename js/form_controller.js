@@ -108,7 +108,9 @@ form_controller.prototype.get_input_values_ = function() {
 };
 
 /**
- * [submit_handler_ description]
+ * Handler for submit click event
+ * TODO: This isn't generic, probably necessary to create a base class
+ *  with over-writable handler
  *
  * @private
  * @return {[type]} [description]
