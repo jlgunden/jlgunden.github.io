@@ -67,7 +67,11 @@ nav_drawer.prototype.decorate = function()  {
   ul.click(function(e) {
     if (e.target !== e.currentTarget) {
       e.preventDefault();
-      change_state(e);
+      var href = $(e.target).attr('href');
+      // old
+      // change_state(e);
+      // new
+      history_manager.load_page(href);
       self.toggle_open_();
     }
     e.stopPropagation();
