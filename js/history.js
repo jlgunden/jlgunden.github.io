@@ -4,6 +4,18 @@ var history_manager = {};
 history_manager.default_state = document.location.pathname.replace('/', '');
 history_manager.default_title = document.title;
 
+// 
+window.onload = function() {
+  if (sessionStorage.getItem('previous_default_state')) {
+    var prev = sessionStorage.getItem('previous_default_state');
+    history_manager.default_state = prev;
+  }
+}
+window.onbeforeunload = function() {
+  sessionStorage.setItem('previous_default_state', history_manager.default_state);
+}
+
+
 // window.onload = function() {
 //   history.replaceState(document.location.pathname.replace('/', ''), null, document.location.pathname);
 // }
