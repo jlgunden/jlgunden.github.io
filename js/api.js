@@ -19,7 +19,7 @@ var api = function(module, method, arguments, handler, error_handler) {
 
   $.ajax({
     'type': 'POST',
-    'url': 'http://jacobgunden.site40.net/',
+    'url': 'http://jacob-gunden.com',
     'data': data,
     'success': function(response) {
       handler && handler(response);

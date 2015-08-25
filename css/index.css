@@ -9,7 +9,7 @@ body {
   font-size: 16px;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(0, #ecf0f1 65%, #4CAF50 35%);
+  background: linear-gradient(0, #ecf0f1 65%, #3F51B5 35%);
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -22,7 +22,7 @@ button {
   height: 45px;
   width: 150px;
   margin-bottom: 10px;
-  background-color: #388E3C;
+  background-color: #3F51B5;
   cursor: pointer;
   border: none;
   border-radius: 2px;
@@ -32,7 +32,7 @@ button {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 button:hover {
-  background-color: #317c34;
+  background-color: #2a378b;
 }
 button:disabled {
   background-color: #95a5a6;
@@ -60,7 +60,7 @@ button:disabled {
   width: 100%;
   height: 70px;
   line-height: 2;
-  background-color: #388E3C;
+  background-color: #303F9F;
   color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
@@ -115,7 +115,7 @@ button:disabled {
 
 .project_header {
   font-size: 30px;
-  color: #607D8B;
+  color: #212121;
   margin: 0 auto 30px auto;
   height: 20px;
 }
@@ -158,7 +158,7 @@ button:disabled {
 
 .card_link a {
   text-decoration: none;
-  color: #607D8B;
+  color: #009688;
 }
 
 .card_image {
@@ -209,7 +209,7 @@ button:disabled {
 
 .contact_header {
   font-size: 30px;
-  color: #388E3C;
+  color: #303F9F;
 }
 
 .button_float {
@@ -233,7 +233,7 @@ button:disabled {
 .button_float i {
   font-size: 25px;
   line-height: 59.5px;
-  color: #388E3C;
+  color: #3F51B5;
 }
 
 .slide_up {
@@ -498,8 +498,8 @@ input {
 }
 input:focus {
   outline: none;
-  border-bottom: 1px solid #388E3C;
-  box-shadow: 0 1px 0 0 #388E3C;
+  border-bottom: 1px solid #303F9F;
+  box-shadow: 0 1px 0 0 #303F9F;
 }
 
 input.input_error {
@@ -529,7 +529,7 @@ label {
 input:focus ~ label, input:valid ~ label {
   top: -20px;
   font-size: 14px;
-  color: #388E3C;
+  color: #303F9F;
 }
 
 .form_inputs {

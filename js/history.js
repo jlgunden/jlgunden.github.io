@@ -1,27 +1,25 @@
 
 var history_manager = {};
 
-history_manager.default_state = document.location.pathname.replace('/', '');
-history_manager.default_title = document.title;
+// If sessionStorage is populated, use those values
+window.onload = function() {
+  if (sessionStorage.getItem('previous_default_state') !== null) {
+    var prev_default_state = sessionStorage.getItem('previous_default_state');
+    var prev_title = sessionStorage.getItem('previous_title');
+    history_manager.default_state = prev_default_state;
+    history_manager.default_title = prev_title;
+  }
+  else {
+    history_manager.default_state = document.location.pathname;
+    history_manager.default_title = document.title;
+  }
+}
 
-// window.onload = function() {
-//   history.replaceState(document.location.pathname.replace('/', ''), null, document.location.pathname);
-// }
-
-// history.pushState(history_manager.default_state, null, history_manager.default_state);
-// console.log(history);
-
-// window.onload = function() {
-//   console.log(history_manager.default_state)
-//   history.replaceState(history_manager.default_state, null, history_manager.default_state);
-// }
-// history_manager.default_state = document.location.pathname;
-// history_manager.default_title = document.title;
-
-// window.onbeforeunload = function() {
-//   localStorage.setItem('default_state', history_manager.default_state);
-//   localStorage.setItem('default_title', history_manager.default_title);
-// }
+// Store the default state in sessionStorage in order to handle page refreshes
+window.onbeforeunload = function() {
+  sessionStorage.setItem('previous_default_state', history_manager.default_state);
+  sessionStorage.setItem('previous_title', history_manager.default_title);
+}
 
 history_manager.load_page = function(href, opt_update_history) {
   if (typeof(opt_update_history) === 'undefined') {
@@ -67,9 +65,7 @@ history_manager.load_handler = function(href, opt_update_history) {
 };
 
 window.addEventListener('popstate', function(e) {
-  console.log(e);
   var state = e.state;
-  console.log(state);
 
   if (state !== null) {
     history_manager.load_page(state, false);

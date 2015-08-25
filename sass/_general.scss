@@ -21,7 +21,7 @@ button {
   height: 45px;
   width: 150px;
   margin-bottom: 10px;
-  background-color: $header_color;
+  background-color: $primary_color;
   cursor: pointer;
   border: none;
   // outline: none;
@@ -160,7 +160,7 @@ button {
 
 .card_link a {
   text-decoration: none;
-  color: $accent_color;
+  color: $link_color;
 }
 
 .card_image {
@@ -193,7 +193,6 @@ button {
   width: 250px;
   border: 0px solid black;
   border-radius: 150px;
-  // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -246,7 +245,7 @@ button {
 .button_float i {
   font-size: 25px;
   line-height: 59.5px;
-  color: $header_color;
+  color: $primary_color;
 }
 
 .slide_up {
