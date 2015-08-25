@@ -15,7 +15,7 @@ var api = function(module, method, arguments, handler, error_handler) {
     'module': module,
     'method': method,
     'arguments': arguments
-  }
+  };
 
   $.ajax({
     'type': 'POST',

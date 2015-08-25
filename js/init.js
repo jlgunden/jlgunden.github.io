@@ -7,9 +7,11 @@
 var initializer = {};
 
 /**
- * [init description]
- * @param  {[type]} page [description]
- * @return {[type]}      [description]
+ * Main init method. Contains code needed for every page and calls
+ * a specific page's initializer method
+ *
+ * @param  {string} page The page to initialize
+ * @return {void}
  */
 initializer.init = function(page) {
   var navigation_drawer = new nav_drawer($('#menu'));
@@ -36,7 +38,7 @@ initializer.init = function(page) {
 };
 
 /**
- * contact page
+ * Contact page method
  *
  * @return {void}
  */
@@ -74,8 +76,21 @@ initializer.contact = function() {
   var form = new form_controller(inputs, $('#email_submit'), $('#form_inputs'));
 };
 
+/**
+ * Index page method
+ *
+ * @return {void}
+ */
 initializer.index = function() {
+  // prevents email from being spammed
+  // TODO: For some reason this isn't working in Safari 8 ???
   var email = 'moc.liamg@nednuglj:otliam'.split('').reverse().join('');
   $('#mailto').attr('href', email);
 };
+
+/**
+ * Projects page method
+ *
+ * @return {void}
+ */
 initializer.projects = function() {};

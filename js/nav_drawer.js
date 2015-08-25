@@ -1,6 +1,7 @@
 
 /**
- * [nav_drawer description]
+ * Navigation drawer for mobile view
+ *
  * @constructor
  * @param {JQuery} menu The menu icon element
  * @return {void}
@@ -29,8 +30,9 @@ var nav_drawer = function(menu) {
 };
 
 /**
- * [decorate description]
- * @return {void}        [description]
+ * Decorate the navigation drawer
+ *
+ * @return {void}
  */
 nav_drawer.prototype.decorate = function()  {
   var self = this;
@@ -82,9 +84,10 @@ nav_drawer.prototype.decorate = function()  {
 };
 
 /**
- * [toggle_open_ description]
+ * Toggles open/close classes for the navigation drawer and mask
+ *
  * @private
- * @return {void} [description]
+ * @return {void}
  */
 nav_drawer.prototype.toggle_open_ = function() {
   this.drawer_.toggleClass('open');
