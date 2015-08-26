@@ -129,57 +129,46 @@ form_controller.prototype.get_input_values_ = function() {
 form_controller.prototype.submit_handler_ = function() {
   var self = this;
 
-  // if (!this.validate_all_() || this.loading_) {
-  //   return;
-  // }
+  if (!this.validate_all_() || this.loading_) {
+    return;
+  }
 
   this.loading_ = true;
   this.submit_.html('Sending...');
-  // this.submit_.attr('disabled', true);
 
-  // var values = this.get_input_values_();
-  // var args = {
-  //   'email_address': values.email_address,
-  //   'name_first': values.name_first,
-  //   'name_last': values.name_last,
-  //   'message': values.message
-  // };
+  var values = this.get_input_values_();
+  var args = {
+    'email_address': values.email_address,
+    'name_first': values.name_first,
+    'name_last': values.name_last,
+    'message': values.message
+  };
 
-  // api('email', 'send_email', args, function(response) {
-    // TODO: no alerts
-    // if (response.error) {
-    //   self.submit_.html('Send');
-    //   self.loading_ = false;
-    //   alert('Oops! something went wrong with the message :(\n\nPlease try again later or use the link on the homepage to send me an email.');
-    // }
-    // else {
-    //   self.submit_.html('Send');
-    //   alert('Thanks for reaching out to me! I will respond shortly');
-    // }
+  api('email', 'send_email', args, function(response) {
+    if (response.error) {
+      self.submit_.html('Send');
+      self.loading_ = false;
+      // TODO: Something other than an alert
+      alert('Oops! something went wrong with the message :(\n\nPlease try again later or use the link on the homepage to send me an email.');
+    }
+    else {
+      self.submit_.html('Send');
+      $('#content').html('');
 
-  this.submit_.html('Send');
-  $('#content').html('');
+      var card_content = $(document.createElement('div'));
+      card_content.addClass('card_content');
 
-  var card_content = $(document.createElement('div'));
-  card_content.addClass('card_content');
+      var name_title = $(document.createElement('div'));
+      name_title.addClass('card_title');
+      name_title.html('Thanks ' + values.name_first + '!');
 
-  var name_title = $(document.createElement('div'));
-  name_title.addClass('card_title');
-  //test
-  var values = {};
-  values.name_first = 'John';
-  // end
-  name_title.html('Thanks ' + values.name_first + '!');
+      var card_line = $(document.createElement('div'));
+      card_line.addClass('card_line');
+      card_line.html('Your message has been sent. With any luck, the internet will deliver it to me! I will be in touch soon.');
 
-  var card_line = $(document.createElement('div'));
-  card_line.addClass('card_line');
-  card_line.html('Your message has been sent. With any luck, the internet will deliver it to me! I will be in touch soon.');
-
-  card_content.append(name_title);
-  card_content.append(card_line);
-  $('#content').append(card_content)
-
-  // alert('Thanks for reaching out to me! I will respond shortly');
-
-  // });
+      card_content.append(name_title);
+      card_content.append(card_line);
+      $('#content').append(card_content)
+      }
+  });
 };
