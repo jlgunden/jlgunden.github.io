@@ -20,13 +20,13 @@ initializer.init = function(page) {
   // change state for desktop
   $('.nav_desktop').click(function(e) {
     if (e.target !== e.currentTarget) {
-      e.preventDefault();
+      console.log($(e.target).parent().data().path);
+      if ($(e.target).parent().data().path !== 'resume') {
+        e.preventDefault();
 
-      var href = $(e.target).attr('href');
-      // old
-      // change_state(e);
-      // new
-      history_manager.load_page(href);
+        var href = $(e.target).attr('href');
+        history_manager.load_page(href);
+      }
     }
     e.stopPropagation();
   });

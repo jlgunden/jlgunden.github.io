@@ -152,7 +152,6 @@ form_controller.prototype.submit_handler_ = function() {
       alert('Oops! something went wrong with the message :(\n\nPlease try again later or use the link on the homepage to send me an email.');
     }
     else {
-      self.submit_.html('Send');
       $('#content').html('');
 
       var card_content = $(document.createElement('div'));
@@ -169,6 +168,6 @@ form_controller.prototype.submit_handler_ = function() {
       card_content.append(name_title);
       card_content.append(card_line);
       $('#content').append(card_content)
-      }
+    }
   });
 };
