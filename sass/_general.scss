@@ -17,14 +17,13 @@ main {
   display: block;
 }
 
-button {
+.button_primary {
   height: 45px;
   width: 150px;
   margin-bottom: 10px;
   background-color: $primary_color;
   cursor: pointer;
   border: none;
-  // outline: none;
   border-radius: 2px;
   text-align: middle;
   font-size: 18px;

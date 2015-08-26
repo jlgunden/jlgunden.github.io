@@ -1,13 +1,13 @@
 // http://sarasoueidan.com/blog/navicon-transformicons/
 
 $transition: 0.3s;
-$button-size: 35px;
+$button_size: 35px;
 @mixin line {
   display: inline-block;
-  width: $button-size;
-  height: $button-size/9;
+  width: $button_size;
+  height: $button_size/9;
   background: $menu_icon_color;
-  border-radius: $button-size/14;
+  border-radius: $button_size/14;
   transition: $transition;
   -webkit-transition: $transition;
 }
@@ -25,6 +25,9 @@ ul {
 }
 
 .lines_button {
+  background-color: $header_color;
+  border: none;
+  outline: none;
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -32,7 +35,7 @@ ul {
   -webkit-transition: 0.3s;
   user-select: none;
   cursor: pointer;
-  border-radius: $button-size/7;
+  border-radius: $button_size/7;
   margin-bottom: 19px;
   &:hover {
     opacity: 1;
@@ -56,19 +59,19 @@ ul {
     position: absolute;
     left:0;
     content: '';
-    transform-origin: $button-size/14 center;
-    -webkit-transform-origin: $button-size/14 center;
+    transform-origin: $button_size/14 center;
+    -webkit-transform-origin: $button_size/14 center;
   }
-  &:before { top: $button-size/4; }
-  &:after { top: -$button-size/4; }
+  &:before { top: $button_size/4; }
+  &:after { top: -$button_size/4; }
 }
 
 .lines_button:hover {
   opacity: 1;
 
   .lines {
-    &:before { top: $button-size/3.5; }
-    &:after { top: -$button-size/3.5; }
+    &:before { top: $button_size/3.5; }
+    &:after { top: -$button_size/3.5; }
   }
 }
 
@@ -82,7 +85,7 @@ ul {
       transform-origin: 50% 50%;
       -webkit-transform-origin: 50% 50%;
       top: 0;
-      width: $button-size;
+      width: $button_size;
     }
 
     // rotate the lines to form the x shape
