@@ -30,9 +30,6 @@ main {
   color: $white;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
-  &:focus {
-    // outline: 0;
-  }
   &:hover {
     background-color: darken($header_color, 5%);
   }
@@ -202,21 +199,6 @@ main {
   padding-bottom: 25px;
 }
 
-// .sites_container a {
-//   margin: 0 10px 0 10px;
-// }
-
-// .sites_container img {
-//   filter: grayscale(100%);
-//   -webkit-filter: grayscale(100%);
-// }
-
-.contact_container {
-  background-color: grey;
-  display: inline-block;
-  margin: auto;
-}
-
 .contact_header {
   font-size: 30px;
   color: $header_color;
@@ -236,7 +218,7 @@ main {
 
   &:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    -tranform: translateY(-5px);
+    transform: translateY(-5px);
     -webkit-transform: translateY(-5px);
   }
 }
