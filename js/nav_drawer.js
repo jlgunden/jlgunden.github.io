@@ -20,7 +20,7 @@ var nav_drawer = function(menu) {
     },
     'Resume': {
       'name': 'Resume',
-      'link': 'resume'
+      'link': 'https://www.dropbox.com/s/6mvqruv11i2aaby/%20jacob_gunden_resume.pdf?dl=0'
     },
     'Contact': {
       'name': 'Contact',
@@ -68,9 +68,13 @@ nav_drawer.prototype.decorate = function()  {
   // AJAX page loading
   ul.click(function(e) {
     if (e.target !== e.currentTarget) {
-      e.preventDefault();
       var href = $(e.target).attr('href');
-      history_manager.load_page(href);
+
+      if ($(e.target).html() !== 'Resume') {
+        e.preventDefault();
+        history_manager.load_page(href);
+      }
+
       self.toggle_open_();
     }
     e.stopPropagation();

@@ -21,6 +21,7 @@ initializer.init = function(page) {
   $('.nav_desktop').click(function(e) {
     if (e.target !== e.currentTarget) {
       console.log($(e.target).parent().data().path);
+      // not a fan of this but it works for now
       if ($(e.target).parent().data().path !== 'resume') {
         e.preventDefault();
 
@@ -83,7 +84,6 @@ initializer.contact = function() {
  */
 initializer.index = function() {
   // prevents email from being spammed
-  // TODO: For some reason this isn't working in Safari 8 ???
   var email = 'moc.liamg@nednuglj:otliam'.split('').reverse().join('');
   $('#mailto').attr('href', email);
 };
