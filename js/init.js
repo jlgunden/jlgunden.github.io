@@ -20,7 +20,6 @@ initializer.init = function(page) {
   // change state for desktop
   $('.nav_desktop').click(function(e) {
     if (e.target !== e.currentTarget) {
-      console.log($(e.target).parent().data().path);
       // not a fan of this but it works for now
       if ($(e.target).parent().data().path !== 'resume') {
         e.preventDefault();

@@ -111,7 +111,6 @@ form_controller.prototype.get_input_values_ = function() {
   var values = {};
 
   for (var input in this.inputs_) {
-    console.log(input);
     values[input] = this.inputs_[input].input_element.val();
   }
 
