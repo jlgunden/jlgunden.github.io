@@ -162,7 +162,9 @@ form_controller.prototype.submit_handler_ = function() {
 
       var card_line = $(document.createElement('div'));
       card_line.addClass('card_line');
-      card_line.html('Your message has been sent. With any luck, the internet will deliver it to me! I will be in touch soon.');
+      card_line.html(
+        'Your message has been sent. With any luck, the internet will deliver it to me shortly! I will be in touch soon.'
+      );
 
       card_content.append(name_title);
       card_content.append(card_line);
