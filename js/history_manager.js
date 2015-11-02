@@ -52,11 +52,11 @@ history_manager.load_handler = function(href, opt_update_history) {
     history.pushState(href, null, href);
   }
 
-  var title = (href === '/') ? 'Jacob Gunden' : 'Jacob Gunden | ' + href;
+  var title = (href === '/' || null) ? 'Jacob Gunden' : 'Jacob Gunden | ' + href;
   document.title = title;
 
   // call the page's init function if it exists as a function
-  var init_method = (href === '/') ? 'index' : href;
+  var init_method = (href === '/' || null) ? 'index' : href;
   if (typeof(initializer[init_method]) === 'function') {
     initializer[init_method]();
   }
