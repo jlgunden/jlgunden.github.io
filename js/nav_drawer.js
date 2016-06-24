@@ -20,7 +20,7 @@ var nav_drawer = function(menu) {
     },
     'Resume': {
       'name': 'Resume',
-      'link': 'https://www.dropbox.com/s/6mvqruv11i2aaby/%20jacob_gunden_resume.pdf?dl=0'
+      'link': 'https://www.dropbox.com/s/81u3pweelprflsc/jacob_gunden_resume.pdf?dl=0'
     },
     'Contact': {
       'name': 'Contact',
